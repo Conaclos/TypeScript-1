@@ -126,9 +126,9 @@ export function series<T>(tasks: Task<T>[], callback: Callback<T[]>): void {
                     // causal relationship when the overloads are combined
                     results.push(result!)
 >results.push(result!) : number
->results.push : (...items: T[]) => number
+>results.push : (...items: readonly T[]) => number
 >results : T[]
->push : (...items: T[]) => number
+>push : (...items: readonly T[]) => number
 >result! : NonNullable<T>
 >result : T | null
 

@@ -9,7 +9,7 @@ function foo1(results: number[] | undefined) {
 
     (results ||= bar?.value ?? []).push(100);
 >(results ||= bar?.value ?? []).push(100) : number
->(results ||= bar?.value ?? []).push : (...items: number[]) => number
+>(results ||= bar?.value ?? []).push : (...items: readonly number[]) => number
 >(results ||= bar?.value ?? []) : number[]
 >results ||= bar?.value ?? [] : number[]
 >results : number[] | undefined
@@ -18,7 +18,7 @@ function foo1(results: number[] | undefined) {
 >bar : { value?: number[] | undefined; } | undefined
 >value : number[] | undefined
 >[] : never[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 
@@ -28,7 +28,7 @@ function foo2(results: number[] | undefined) {
 
     (results ??= bar?.value ?? []).push(100);
 >(results ??= bar?.value ?? []).push(100) : number
->(results ??= bar?.value ?? []).push : (...items: number[]) => number
+>(results ??= bar?.value ?? []).push : (...items: readonly number[]) => number
 >(results ??= bar?.value ?? []) : number[]
 >results ??= bar?.value ?? [] : number[]
 >results : number[] | undefined
@@ -37,7 +37,7 @@ function foo2(results: number[] | undefined) {
 >bar : { value?: number[] | undefined; } | undefined
 >value : number[] | undefined
 >[] : never[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 
@@ -47,7 +47,7 @@ function foo3(results: number[] | undefined) {
 
     (results &&= bar?.value ?? []).push(100);
 >(results &&= bar?.value ?? []).push(100) : number
->(results &&= bar?.value ?? []).push : (...items: number[]) => number
+>(results &&= bar?.value ?? []).push : (...items: readonly number[]) => number
 >(results &&= bar?.value ?? []) : number[] | undefined
 >results &&= bar?.value ?? [] : number[] | undefined
 >results : number[] | undefined
@@ -56,7 +56,7 @@ function foo3(results: number[] | undefined) {
 >bar : { value?: number[] | undefined; } | undefined
 >value : number[] | undefined
 >[] : never[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 

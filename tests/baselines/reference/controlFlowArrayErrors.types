@@ -15,9 +15,9 @@ function f1() {
 
     x.push(5);
 >x.push(5) : number
->x.push : (...items: any[]) => number
+>x.push : (...items: readonly any[]) => number
 >x : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >5 : 5
 
     let z = x;
@@ -42,9 +42,9 @@ function f2() {
 
     x.push(5);
 >x.push(5) : number
->x.push : (...items: any[]) => number
+>x.push : (...items: readonly any[]) => number
 >x : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >5 : 5
 
     let z = x;
@@ -61,9 +61,9 @@ function f3() {
 
     x.push(5);
 >x.push(5) : number
->x.push : (...items: any[]) => number
+>x.push : (...items: readonly any[]) => number
 >x : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >5 : 5
 
     function g() {
@@ -89,9 +89,9 @@ function f4() {
 
     x.push(true);      // Error
 >x.push(true) : number
->x.push : (...items: (string | number)[]) => number
+>x.push : (...items: readonly (string | number)[]) => number
 >x : (string | number)[]
->push : (...items: (string | number)[]) => number
+>push : (...items: readonly (string | number)[]) => number
 >true : true
 }
 
@@ -106,9 +106,9 @@ function f5() {
 
     x.push(true);          // Error
 >x.push(true) : number
->x.push : (...items: (string | number)[]) => number
+>x.push : (...items: readonly (string | number)[]) => number
 >x : (string | number)[]
->push : (...items: (string | number)[]) => number
+>push : (...items: readonly (string | number)[]) => number
 >true : true
 }
 
@@ -129,16 +129,16 @@ function f6() {
 
         x.push(5);
 >x.push(5) : number
->x.push : (...items: any[]) => number
+>x.push : (...items: readonly any[]) => number
 >x : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >5 : 5
 
         x.push("hello");
 >x.push("hello") : number
->x.push : (...items: any[]) => number
+>x.push : (...items: readonly any[]) => number
 >x : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >"hello" : "hello"
     }
     else {
@@ -153,9 +153,9 @@ function f6() {
 
     x.push(99);  // Error
 >x.push(99) : number
->x.push : ((...items: (string | number)[]) => number) | ((...items: boolean[]) => number)
+>x.push : ((...items: readonly (string | number)[]) => number) | ((...items: readonly boolean[]) => number)
 >x : (string | number)[] | boolean[]
->push : ((...items: (string | number)[]) => number) | ((...items: boolean[]) => number)
+>push : ((...items: readonly (string | number)[]) => number) | ((...items: readonly boolean[]) => number)
 >99 : 99
 }
 
@@ -168,9 +168,9 @@ function f7() {
 
     x.push(5);
 >x.push(5) : number
->x.push : (...items: any[]) => number
+>x.push : (...items: readonly any[]) => number
 >x : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >5 : 5
 
     let y = x;        // y has non-evolving array value
@@ -179,16 +179,16 @@ function f7() {
 
     x.push("hello");  // Ok
 >x.push("hello") : number
->x.push : (...items: any[]) => number
+>x.push : (...items: readonly any[]) => number
 >x : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >"hello" : "hello"
 
     y.push("hello");  // Error
 >y.push("hello") : number
->y.push : (...items: number[]) => number
+>y.push : (...items: readonly number[]) => number
 >y : number[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >"hello" : "hello"
 }
 
@@ -201,9 +201,9 @@ function f8() {
 
     x.push(5);
 >x.push(5) : number
->x.push : (...items: any[]) => number
+>x.push : (...items: readonly any[]) => number
 >x : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >5 : 5
 
     function g() {

@@ -15,7 +15,7 @@ tests/cases/conformance/types/asyncGenerators/types.asyncGenerators.es2018.2.ts(
 tests/cases/conformance/types/asyncGenerators/types.asyncGenerators.es2018.2.ts(19,7): error TS2322: Type '() => AsyncGenerator<string, void, undefined>' is not assignable to type '() => AsyncIterable<number>'.
   Call signature return types 'AsyncGenerator<string, void, undefined>' and 'AsyncIterable<number>' are incompatible.
     The types of '[Symbol.asyncIterator]().next' are incompatible between these types.
-      Type '(...args: [] | [undefined]) => Promise<IteratorResult<string, void>>' is not assignable to type '(...args: [] | [undefined]) => Promise<IteratorResult<number, any>>'.
+      Type '(...args: readonly [] | readonly [undefined]) => Promise<IteratorResult<string, void>>' is not assignable to type '(...args: readonly [] | readonly [undefined]) => Promise<IteratorResult<number, any>>'.
 tests/cases/conformance/types/asyncGenerators/types.asyncGenerators.es2018.2.ts(22,7): error TS2322: Type '() => AsyncGenerator<string, void, undefined>' is not assignable to type '() => AsyncIterable<number>'.
   Type 'AsyncGenerator<string, void, undefined>' is not assignable to type 'AsyncIterable<number>'.
 tests/cases/conformance/types/asyncGenerators/types.asyncGenerators.es2018.2.ts(25,7): error TS2322: Type '() => AsyncGenerator<string, void, undefined>' is not assignable to type '() => AsyncIterable<number>'.
@@ -88,7 +88,7 @@ tests/cases/conformance/types/asyncGenerators/types.asyncGenerators.es2018.2.ts(
 !!! error TS2322: Type '() => AsyncGenerator<string, void, undefined>' is not assignable to type '() => AsyncIterable<number>'.
 !!! error TS2322:   Call signature return types 'AsyncGenerator<string, void, undefined>' and 'AsyncIterable<number>' are incompatible.
 !!! error TS2322:     The types of '[Symbol.asyncIterator]().next' are incompatible between these types.
-!!! error TS2322:       Type '(...args: [] | [undefined]) => Promise<IteratorResult<string, void>>' is not assignable to type '(...args: [] | [undefined]) => Promise<IteratorResult<number, any>>'.
+!!! error TS2322:       Type '(...args: readonly [] | readonly [undefined]) => Promise<IteratorResult<string, void>>' is not assignable to type '(...args: readonly [] | readonly [undefined]) => Promise<IteratorResult<number, any>>'.
         yield "a";
     };
     const assignability5: () => AsyncIterable<number> = async function * () {

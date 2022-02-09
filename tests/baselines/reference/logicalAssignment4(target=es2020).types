@@ -5,12 +5,12 @@ function foo1(results: number[] | undefined) {
 
     (results ||= []).push(100);
 >(results ||= []).push(100) : number
->(results ||= []).push : (...items: number[]) => number
+>(results ||= []).push : (...items: readonly number[]) => number
 >(results ||= []) : number[]
 >results ||= [] : number[]
 >results : number[] | undefined
 >[] : never[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 
@@ -20,12 +20,12 @@ function foo2(results: number[] | undefined) {
 
     (results ??= []).push(100);
 >(results ??= []).push(100) : number
->(results ??= []).push : (...items: number[]) => number
+>(results ??= []).push : (...items: readonly number[]) => number
 >(results ??= []) : number[]
 >results ??= [] : number[]
 >results : number[] | undefined
 >[] : never[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 
@@ -40,9 +40,9 @@ function foo3(results: number[] | undefined) {
 
     results.push(100);
 >results.push(100) : number
->results.push : (...items: number[]) => number
+>results.push : (...items: readonly number[]) => number
 >results : number[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 
@@ -57,9 +57,9 @@ function foo4(results: number[] | undefined) {
 
     results.push(100);
 >results.push(100) : number
->results.push : (...items: number[]) => number
+>results.push : (...items: readonly number[]) => number
 >results : number[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 

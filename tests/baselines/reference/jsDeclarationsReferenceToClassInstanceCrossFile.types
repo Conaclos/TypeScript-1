@@ -85,11 +85,11 @@ class Render {
 
         this.objects.push(obj);
 >this.objects.push(obj) : number
->this.objects.push : (...items: Rectangle[]) => number
+>this.objects.push : (...items: readonly Rectangle[]) => number
 >this.objects : Rectangle[]
 >this : this
 >objects : Rectangle[]
->push : (...items: Rectangle[]) => number
+>push : (...items: readonly Rectangle[]) => number
 >obj : Rectangle
 
         return obj;

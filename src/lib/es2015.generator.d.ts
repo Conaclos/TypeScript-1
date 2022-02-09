@@ -2,7 +2,7 @@
 
 interface Generator<T = unknown, TReturn = any, TNext = unknown> extends Iterator<T, TReturn, TNext> {
     // NOTE: 'next' is defined using a tuple to ensure we report the correct assignability errors in all places.
-    next(...args: [] | [TNext]): IteratorResult<T, TReturn>;
+    next(...args: readonly [] | readonly [TNext]): IteratorResult<T, TReturn>;
     return(value: TReturn): IteratorResult<T, TReturn>;
     throw(e: any): IteratorResult<T, TReturn>;
     [Symbol.iterator](): Generator<T, TReturn, TNext>;
@@ -13,12 +13,12 @@ interface GeneratorFunction {
      * Creates a new Generator object.
      * @param args A list of arguments the function accepts.
      */
-    new (...args: any[]): Generator;
+    new (...args: readonly any[]): Generator;
     /**
      * Creates a new Generator object.
      * @param args A list of arguments the function accepts.
      */
-    (...args: any[]): Generator;
+    (...args: readonly any[]): Generator;
     /**
      * The length of the arguments.
      */
@@ -38,12 +38,12 @@ interface GeneratorFunctionConstructor {
      * Creates a new Generator function.
      * @param args A list of arguments the function accepts.
      */
-    new (...args: string[]): GeneratorFunction;
+    new (...args: readonly string[]): GeneratorFunction;
     /**
      * Creates a new Generator function.
      * @param args A list of arguments the function accepts.
      */
-    (...args: string[]): GeneratorFunction;
+    (...args: readonly string[]): GeneratorFunction;
     /**
      * The length of the arguments.
      */

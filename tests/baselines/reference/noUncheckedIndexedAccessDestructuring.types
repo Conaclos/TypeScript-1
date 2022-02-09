@@ -25,9 +25,9 @@ const [...s2] = strArray;
 
 s2.push(undefined); // Should error, 'undefined' not part of s2's element type
 >s2.push(undefined) : number
->s2.push : (...items: string[]) => number
+>s2.push : (...items: readonly string[]) => number
 >s2 : string[]
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >undefined : undefined
 
 // Destructuring a rest element -> do not include undefined
@@ -39,9 +39,9 @@ const [, , ...s3] = strArray;
 
 s3.push(undefined); // Should error, 'undefined' not part of s2's element type
 >s3.push(undefined) : number
->s3.push : (...items: string[]) => number
+>s3.push : (...items: readonly string[]) => number
 >s3 : string[]
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >undefined : undefined
 
 // Declaration forms for object destructuring

@@ -12,9 +12,9 @@ function yadda() {
 
     out.push(100)
 >out.push(100) : number
->out.push : (...items: any[]) => number
+>out.push : (...items: readonly any[]) => number
 >out : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >100 : 100
 
     unsafeCast<any>(out);

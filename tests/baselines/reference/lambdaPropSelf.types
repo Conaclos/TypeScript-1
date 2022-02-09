@@ -28,11 +28,11 @@ class Person {
 >addChild : () => number
 >() => this.children.push("New child") : () => number
 >this.children.push("New child") : number
->this.children.push : (...items: string[]) => number
+>this.children.push : (...items: readonly string[]) => number
 >this.children : string[]
 >this : this
 >children : string[]
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >"New child" : "New child"
 }
 

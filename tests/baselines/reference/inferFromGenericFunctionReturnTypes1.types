@@ -14,11 +14,11 @@ class SetOf<A> {
 
     this._store.push(a);
 >this._store.push(a) : number
->this._store.push : (...items: A[]) => number
+>this._store.push : (...items: readonly A[]) => number
 >this._store : A[]
 >this : this
 >_store : A[]
->push : (...items: A[]) => number
+>push : (...items: readonly A[]) => number
 >a : A
   }
 

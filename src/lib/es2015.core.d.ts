@@ -63,7 +63,7 @@ interface ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of<T>(...items: T[]): T[];
+    of<T>(...items: readonly T[]): T[];
 }
 
 interface DateConstructor {
@@ -168,7 +168,7 @@ interface Math {
      *     If any argument is NaN, the result is NaN.
      *     If all arguments are either +0 or −0, the result is +0.
      */
-    hypot(...values: number[]): number;
+    hypot(...values: readonly number[]): number;
 
     /**
      * Returns the integral part of the a numeric expression, x, removing any fractional digits.
@@ -290,7 +290,7 @@ interface ObjectConstructor {
      * @param target The target object to copy to.
      * @param sources One or more source objects from which to copy properties
      */
-    assign(target: object, ...sources: any[]): any;
+    assign(target: object, ...sources: readonly any[]): any;
 
     /**
      * Returns an array of all symbol properties found directly on object o.

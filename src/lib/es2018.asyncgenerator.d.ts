@@ -2,7 +2,7 @@
 
 interface AsyncGenerator<T = unknown, TReturn = any, TNext = unknown> extends AsyncIterator<T, TReturn, TNext> {
     // NOTE: 'next' is defined using a tuple to ensure we report the correct assignability errors in all places.
-    next(...args: [] | [TNext]): Promise<IteratorResult<T, TReturn>>;
+    next(...args: readonly [] | readonly [TNext]): Promise<IteratorResult<T, TReturn>>;
     return(value: TReturn | PromiseLike<TReturn>): Promise<IteratorResult<T, TReturn>>;
     throw(e: any): Promise<IteratorResult<T, TReturn>>;
     [Symbol.asyncIterator](): AsyncGenerator<T, TReturn, TNext>;
@@ -13,12 +13,12 @@ interface AsyncGeneratorFunction {
      * Creates a new AsyncGenerator object.
      * @param args A list of arguments the function accepts.
      */
-    new (...args: any[]): AsyncGenerator;
+    new (...args: readonly any[]): AsyncGenerator;
     /**
      * Creates a new AsyncGenerator object.
      * @param args A list of arguments the function accepts.
      */
-    (...args: any[]): AsyncGenerator;
+    (...args: readonly any[]): AsyncGenerator;
     /**
      * The length of the arguments.
      */
@@ -38,12 +38,12 @@ interface AsyncGeneratorFunctionConstructor {
      * Creates a new AsyncGenerator function.
      * @param args A list of arguments the function accepts.
      */
-    new (...args: string[]): AsyncGeneratorFunction;
+    new (...args: readonly string[]): AsyncGeneratorFunction;
     /**
      * Creates a new AsyncGenerator function.
      * @param args A list of arguments the function accepts.
      */
-    (...args: string[]): AsyncGeneratorFunction;
+    (...args: readonly string[]): AsyncGeneratorFunction;
     /**
      * The length of the arguments.
      */

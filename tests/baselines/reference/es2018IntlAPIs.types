@@ -22,12 +22,12 @@ console.log(Intl.PluralRules.supportedLocalesOf(locales, options).join(', '));
 >log : (...data: any[]) => void
 >Intl.PluralRules.supportedLocalesOf(locales, options).join(', ') : string
 >Intl.PluralRules.supportedLocalesOf(locales, options).join : (separator?: string) => string
->Intl.PluralRules.supportedLocalesOf(locales, options) : string[]
->Intl.PluralRules.supportedLocalesOf : (locales: string | string[], options?: { localeMatcher?: "lookup" | "best fit"; }) => string[]
->Intl.PluralRules : { (locales?: string | string[], options?: Intl.PluralRulesOptions): Intl.PluralRules; new (locales?: string | string[], options?: Intl.PluralRulesOptions): Intl.PluralRules; supportedLocalesOf(locales: string | string[], options?: { localeMatcher?: "lookup" | "best fit"; }): string[]; }
+>Intl.PluralRules.supportedLocalesOf(locales, options) : readonly string[]
+>Intl.PluralRules.supportedLocalesOf : (locales: string | readonly string[], options?: { localeMatcher?: "lookup" | "best fit"; }) => readonly string[]
+>Intl.PluralRules : { (locales?: string | string[], options?: Intl.PluralRulesOptions): Intl.PluralRules; new (locales?: string | readonly string[], options?: Intl.PluralRulesOptions): Intl.PluralRules; supportedLocalesOf(locales: string | readonly string[], options?: { localeMatcher?: "lookup" | "best fit"; }): readonly string[]; }
 >Intl : typeof Intl
->PluralRules : { (locales?: string | string[], options?: Intl.PluralRulesOptions): Intl.PluralRules; new (locales?: string | string[], options?: Intl.PluralRulesOptions): Intl.PluralRules; supportedLocalesOf(locales: string | string[], options?: { localeMatcher?: "lookup" | "best fit"; }): string[]; }
->supportedLocalesOf : (locales: string | string[], options?: { localeMatcher?: "lookup" | "best fit"; }) => string[]
+>PluralRules : { (locales?: string | string[], options?: Intl.PluralRulesOptions): Intl.PluralRules; new (locales?: string | readonly string[], options?: Intl.PluralRulesOptions): Intl.PluralRules; supportedLocalesOf(locales: string | readonly string[], options?: { localeMatcher?: "lookup" | "best fit"; }): readonly string[]; }
+>supportedLocalesOf : (locales: string | readonly string[], options?: { localeMatcher?: "lookup" | "best fit"; }) => readonly string[]
 >locales : string[]
 >options : { readonly localeMatcher: "lookup"; }
 >join : (separator?: string) => string

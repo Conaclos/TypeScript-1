@@ -44,9 +44,9 @@ function switchToForwardSlashes(path: string) {
 
     return path.replace(/\\/g, "/");
 >path.replace(/\\/g, "/") : string
->path.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>path.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >path : string
->replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >/\\/g : RegExp
 >"/" : "/"
 }
@@ -175,11 +175,11 @@ module Harness {
 >global : any
 ><any>Function("return this").call(null) : any
 >Function("return this").call(null) : any
->Function("return this").call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>Function("return this").call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >Function("return this") : Function
 >Function : FunctionConstructor
 >"return this" : "return this"
->call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >null : null
 
     export var usePull = false;
@@ -264,9 +264,9 @@ module Harness {
 
                 bugIds.push(id);
 >bugIds.push(id) : number
->bugIds.push : (...items: string[]) => number
+>bugIds.push : (...items: readonly string[]) => number
 >bugIds : string[]
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >id : string
             }
         }
@@ -975,9 +975,9 @@ module Harness {
 
         loggers.push(logger);
 >loggers.push(logger) : number
->loggers.push : (...items: ILogger[]) => number
+>loggers.push : (...items: readonly ILogger[]) => number
 >loggers : ILogger[]
->push : (...items: ILogger[]) => number
+>push : (...items: readonly ILogger[]) => number
 >logger : ILogger
     }
     export function emitLog(field: string, ...params: any[]) {
@@ -1066,11 +1066,11 @@ module Harness {
 
             this.children.push(child);
 >this.children.push(child) : number
->this.children.push : (...items: Runnable[]) => number
+>this.children.push : (...items: readonly Runnable[]) => number
 >this.children : Runnable[]
 >this : this
 >children : Runnable[]
->push : (...items: Runnable[]) => number
+>push : (...items: readonly Runnable[]) => number
 >child : Runnable
         }
 
@@ -1327,11 +1327,11 @@ module Harness {
 
             Runnable.currentStack.push(this);
 >Runnable.currentStack.push(this) : number
->Runnable.currentStack.push : (...items: Runnable[]) => number
+>Runnable.currentStack.push : (...items: readonly Runnable[]) => number
 >Runnable.currentStack : Runnable[]
 >Runnable : typeof Runnable
 >currentStack : Runnable[]
->push : (...items: Runnable[]) => number
+>push : (...items: readonly Runnable[]) => number
 >this : this
 
             emitLog('testStart', { desc: this.description });
@@ -1474,11 +1474,11 @@ module Harness {
 
             Runnable.currentStack.push(this);
 >Runnable.currentStack.push(this) : number
->Runnable.currentStack.push : (...items: Runnable[]) => number
+>Runnable.currentStack.push : (...items: readonly Runnable[]) => number
 >Runnable.currentStack : Runnable[]
 >Runnable : typeof Runnable
 >currentStack : Runnable[]
->push : (...items: Runnable[]) => number
+>push : (...items: readonly Runnable[]) => number
 >this : this
 
             emitLog('scenarioStart', { desc: this.description });
@@ -1981,11 +1981,11 @@ module Harness {
 
                 this.data.push(value);
 >this.data.push(value) : number
->this.data.push : (...items: number[]) => number
+>this.data.push : (...items: readonly number[]) => number
 >this.data : number[]
 >this : this
 >data : number[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >value : number
             }
 
@@ -2329,9 +2329,9 @@ module Harness {
 
             f.call(benchmark, subBenchmark);
 >f.call(benchmark, subBenchmark) : any
->f.call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>f.call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >f : (bench?: () => void) => void
->call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >benchmark : Benchmark
 >subBenchmark : (name: any, f: any) => void
 
@@ -2530,9 +2530,9 @@ module Harness {
 
             benchmarks.push(BenchmarkClass);
 >benchmarks.push(BenchmarkClass) : number
->benchmarks.push : (...items: (new () => Benchmark)[]) => number
+>benchmarks.push : (...items: readonly (new () => Benchmark)[]) => number
 >benchmarks : (new () => Benchmark)[]
->push : (...items: (new () => Benchmark)[]) => number
+>push : (...items: readonly (new () => Benchmark)[]) => number
 >BenchmarkClass : any
         }
 
@@ -2574,11 +2574,11 @@ module Harness {
 
                 this.lines.push(this.currentLine + str);
 >this.lines.push(this.currentLine + str) : number
->this.lines.push : (...items: string[]) => number
+>this.lines.push : (...items: readonly string[]) => number
 >this.lines : string[]
 >this : this
 >lines : string[]
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >this.currentLine + str : string
 >this.currentLine : string
 >this : this
@@ -2605,11 +2605,11 @@ module Harness {
 >length : number
 >0 : 0
 >this.lines.push(this.currentLine) : number
->this.lines.push : (...items: string[]) => number
+>this.lines.push : (...items: readonly string[]) => number
 >this.lines : string[]
 >this : this
 >lines : string[]
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >this.currentLine : string
 >this : this
 >currentLine : string
@@ -2775,11 +2775,11 @@ module Harness {
 >p : string
 >'0.js' : "0.js"
 >current.lines.unshift('////[' + p + ']') : number
->current.lines.unshift : (...items: string[]) => number
+>current.lines.unshift : (...items: readonly string[]) => number
 >current.lines : string[]
 >current : WriterAggregator
 >lines : string[]
->unshift : (...items: string[]) => number
+>unshift : (...items: readonly string[]) => number
 >'////[' + p + ']' : string
 >'////[' + p : string
 >'////[' : "////["
@@ -2788,9 +2788,9 @@ module Harness {
 
                             result.push({ filename: p, file: this.fileCollection[p] });
 >result.push({ filename: p, file: this.fileCollection[p] }) : number
->result.push : (...items: { filename: string; file: WriterAggregator; }[]) => number
+>result.push : (...items: readonly { filename: string; file: WriterAggregator; }[]) => number
 >result : { filename: string; file: WriterAggregator; }[]
->push : (...items: { filename: string; file: WriterAggregator; }[]) => number
+>push : (...items: readonly { filename: string; file: WriterAggregator; }[]) => number
 >{ filename: p, file: this.fileCollection[p] } : { filename: string; file: any; }
 >filename : string
 >p : string
@@ -3840,9 +3840,9 @@ module Harness {
 
                                 matchingIdentifiers.push(new Type(entries[i].type, code, targetIdentifier));
 >matchingIdentifiers.push(new Type(entries[i].type, code, targetIdentifier)) : number
->matchingIdentifiers.push : (...items: Type[]) => number
+>matchingIdentifiers.push : (...items: readonly Type[]) => number
 >matchingIdentifiers : Type[]
->push : (...items: Type[]) => number
+>push : (...items: readonly Type[]) => number
 >new Type(entries[i].type, code, targetIdentifier) : Type
 >Type : typeof Type
 >entries[i].type : any
@@ -3965,9 +3965,9 @@ module Harness {
 
                                     matchingIdentifiers.push(foundValue);
 >matchingIdentifiers.push(foundValue) : number
->matchingIdentifiers.push : (...items: Type[]) => number
+>matchingIdentifiers.push : (...items: readonly Type[]) => number
 >matchingIdentifiers : Type[]
->push : (...items: Type[]) => number
+>push : (...items: readonly Type[]) => number
 >foundValue : Type
                                 }
                             }
@@ -4054,9 +4054,9 @@ module Harness {
 
                                             matchingIdentifiers.push(foundValue);
 >matchingIdentifiers.push(foundValue) : number
->matchingIdentifiers.push : (...items: Type[]) => number
+>matchingIdentifiers.push : (...items: readonly Type[]) => number
 >matchingIdentifiers : Type[]
->push : (...items: Type[]) => number
+>push : (...items: readonly Type[]) => number
 >foundValue : Type
                                         }
                                     }
@@ -4775,9 +4775,9 @@ module Harness {
 >lines = lines.concat(v.file.lines) : any[]
 >lines : any[]
 >lines.concat(v.file.lines) : any[]
->lines.concat : { (...items: ConcatArray<any>[]): any[]; (...items: any[]): any[]; }
+>lines.concat : { (...items: readonly ConcatArray<any>[]): any[]; (...items: readonly any[]): any[]; }
 >lines : any[]
->concat : { (...items: ConcatArray<any>[]): any[]; (...items: any[]): any[]; }
+>concat : { (...items: readonly ConcatArray<any>[]): any[]; (...items: readonly any[]): any[]; }
 >v.file.lines : string[]
 >v.file : WriterAggregator
 >v : { filename: string; file: WriterAggregator; }
@@ -4827,11 +4827,11 @@ module Harness {
 
                         this.errors.push(new CompilerError(err.filename, 0, 0, err.message));
 >this.errors.push(new CompilerError(err.filename, 0, 0, err.message)) : number
->this.errors.push : (...items: CompilerError[]) => number
+>this.errors.push : (...items: readonly CompilerError[]) => number
 >this.errors : CompilerError[]
 >this : this
 >errors : CompilerError[]
->push : (...items: CompilerError[]) => number
+>push : (...items: readonly CompilerError[]) => number
 >new CompilerError(err.filename, 0, 0, err.message) : CompilerError
 >CompilerError : typeof CompilerError
 >err.filename : any
@@ -4859,11 +4859,11 @@ module Harness {
 
                             this.errors.push(new CompilerError(match[1], parseFloat(match[2]), parseFloat(match[3]), match[4]));
 >this.errors.push(new CompilerError(match[1], parseFloat(match[2]), parseFloat(match[3]), match[4])) : number
->this.errors.push : (...items: CompilerError[]) => number
+>this.errors.push : (...items: readonly CompilerError[]) => number
 >this.errors : CompilerError[]
 >this : this
 >errors : CompilerError[]
->push : (...items: CompilerError[]) => number
+>push : (...items: readonly CompilerError[]) => number
 >new CompilerError(match[1], parseFloat(match[2]), parseFloat(match[3]), match[4]) : CompilerError
 >CompilerError : typeof CompilerError
 >match[1] : string
@@ -5585,9 +5585,9 @@ module Harness {
 
             scripts.push(addUnit(code, uName, false, isDeclareFile, references));
 >scripts.push(addUnit(code, uName, false, isDeclareFile, references)) : number
->scripts.push : (...items: TypeScript.Script[]) => number
+>scripts.push : (...items: readonly TypeScript.Script[]) => number
 >scripts : TypeScript.Script[]
->push : (...items: TypeScript.Script[]) => number
+>push : (...items: readonly TypeScript.Script[]) => number
 >addUnit(code, uName, false, isDeclareFile, references) : TypeScript.Script
 >addUnit : (code: string, unitName?: string, isResident?: boolean, isDeclareFile?: boolean, references?: TypeScript.IFileReference[]) => TypeScript.Script
 >code : string
@@ -5730,9 +5730,9 @@ module Harness {
 
                         addedFiles.push(dep.name);
 >addedFiles.push(dep.name) : number
->addedFiles.push : (...items: any[]) => number
+>addedFiles.push : (...items: readonly any[]) => number
 >addedFiles : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >dep.name : string
 >dep : TestCaseParser.TestUnitData
 >name : string
@@ -5857,9 +5857,9 @@ module Harness {
 
                 opts.push({ flag: match[1], value: match[2] });
 >opts.push({ flag: match[1], value: match[2] }) : number
->opts.push : (...items: any[]) => number
+>opts.push : (...items: readonly any[]) => number
 >opts : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >{ flag: match[1], value: match[2] } : { flag: any; value: any; }
 >flag : any
 >match[1] : any
@@ -6000,9 +6000,9 @@ module Harness {
 
                         refs.push(ref);
 >refs.push(ref) : number
->refs.push : (...items: TypeScript.IFileReference[]) => number
+>refs.push : (...items: readonly TypeScript.IFileReference[]) => number
 >refs : TypeScript.IFileReference[]
->push : (...items: TypeScript.IFileReference[]) => number
+>push : (...items: readonly TypeScript.IFileReference[]) => number
 >ref : { minChar: number; limChar: number; startLine: number; startCol: number; path: string; isResident: boolean; }
                     }
                 } else if (testMetaData) {
@@ -6105,9 +6105,9 @@ module Harness {
                             };
                         files.push(newTestFile);
 >files.push(newTestFile) : number
->files.push : (...items: TestUnitData[]) => number
+>files.push : (...items: readonly TestUnitData[]) => number
 >files : TestUnitData[]
->push : (...items: TestUnitData[]) => number
+>push : (...items: readonly TestUnitData[]) => number
 >newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: TypeScript.IFileReference[]; }
 
                         // Reset local data
@@ -6216,9 +6216,9 @@ module Harness {
             };
             files.push(newTestFile);
 >files.push(newTestFile) : number
->files.push : (...items: TestUnitData[]) => number
+>files.push : (...items: readonly TestUnitData[]) => number
 >files : TestUnitData[]
->push : (...items: TestUnitData[]) => number
+>push : (...items: readonly TestUnitData[]) => number
 >newTestFile : { content: string; name: any; fileOptions: {}; originalFilePath: string; references: TypeScript.IFileReference[]; }
 
             return { settings: settings, testUnitData: files };
@@ -6336,11 +6336,11 @@ module Harness {
             // Store edit range + new length of script
             this.editRanges.push({
 >this.editRanges.push({                length: this.content.length,                editRange: new TypeScript.ScriptEditRange(minChar, limChar, (limChar - minChar) + newText.length)            }) : number
->this.editRanges.push : (...items: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => number
+>this.editRanges.push : (...items: readonly { length: number; editRange: TypeScript.ScriptEditRange; }[]) => number
 >this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
 >this : this
 >editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
->push : (...items: { length: number; editRange: TypeScript.ScriptEditRange; }[]) => number
+>push : (...items: readonly { length: number; editRange: TypeScript.ScriptEditRange; }[]) => number
 >{                length: this.content.length,                editRange: new TypeScript.ScriptEditRange(minChar, limChar, (limChar - minChar) + newText.length)            } : { length: number; editRange: any; }
 
                 length: this.content.length,
@@ -6383,11 +6383,11 @@ module Harness {
 
                 this.editRanges.splice(0, this.maxScriptVersions - this.editRanges.length);
 >this.editRanges.splice(0, this.maxScriptVersions - this.editRanges.length) : { length: number; editRange: TypeScript.ScriptEditRange; }[]
->this.editRanges.splice : { (start: number, deleteCount?: number): { length: number; editRange: TypeScript.ScriptEditRange; }[]; (start: number, deleteCount: number, ...items: { length: number; editRange: TypeScript.ScriptEditRange; }[]): { length: number; editRange: TypeScript.ScriptEditRange; }[]; }
+>this.editRanges.splice : { (start: number, deleteCount?: number): { length: number; editRange: TypeScript.ScriptEditRange; }[]; (start: number, deleteCount: number, ...items: readonly { length: number; editRange: TypeScript.ScriptEditRange; }[]): { length: number; editRange: TypeScript.ScriptEditRange; }[]; }
 >this.editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
 >this : this
 >editRanges : { length: number; editRange: TypeScript.ScriptEditRange; }[]
->splice : { (start: number, deleteCount?: number): { length: number; editRange: TypeScript.ScriptEditRange; }[]; (start: number, deleteCount: number, ...items: { length: number; editRange: TypeScript.ScriptEditRange; }[]): { length: number; editRange: TypeScript.ScriptEditRange; }[]; }
+>splice : { (start: number, deleteCount?: number): { length: number; editRange: TypeScript.ScriptEditRange; }[]; (start: number, deleteCount: number, ...items: readonly { length: number; editRange: TypeScript.ScriptEditRange; }[]): { length: number; editRange: TypeScript.ScriptEditRange; }[]; }
 >0 : 0
 >this.maxScriptVersions - this.editRanges.length : number
 >this.maxScriptVersions : number
@@ -6493,9 +6493,9 @@ module Harness {
 >prev : any
 >current : any
 >Math.min(prev, current) : number
->Math.min : (...values: number[]) => number
+>Math.min : (...values: readonly number[]) => number
 >Math : Math
->min : (...values: number[]) => number
+>min : (...values: readonly number[]) => number
 >prev : any
 >current : any
 
@@ -6523,9 +6523,9 @@ module Harness {
 >prev : number
 >current : number
 >Math.min(prev, current) : number
->Math.min : (...values: number[]) => number
+>Math.min : (...values: readonly number[]) => number
 >Math : Math
->min : (...values: number[]) => number
+>min : (...values: readonly number[]) => number
 >prev : number
 >current : number
 
@@ -6645,11 +6645,11 @@ module Harness {
 
             this.scripts.push(script);
 >this.scripts.push(script) : number
->this.scripts.push : (...items: ScriptInfo[]) => number
+>this.scripts.push : (...items: readonly ScriptInfo[]) => number
 >this.scripts : ScriptInfo[]
 >this : this
 >scripts : ScriptInfo[]
->push : (...items: ScriptInfo[]) => number
+>push : (...items: readonly ScriptInfo[]) => number
 >script : ScriptInfo
         }
 
@@ -7366,9 +7366,9 @@ module Harness {
 
                     result.push({ edit: edits[i], index: i });
 >result.push({ edit: edits[i], index: i }) : number
->result.push : (...items: any[]) => number
+>result.push : (...items: readonly any[]) => number
 >result : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >{ edit: edits[i], index: i } : { edit: Services.TextEdit; index: number; }
 >edit : Services.TextEdit
 >edits[i] : Services.TextEdit
@@ -7461,9 +7461,9 @@ module Harness {
 
                     result.push(currentEdit);
 >result.push(currentEdit) : number
->result.push : (...items: Services.TextEdit[]) => number
+>result.push : (...items: readonly Services.TextEdit[]) => number
 >result : Services.TextEdit[]
->push : (...items: Services.TextEdit[]) => number
+>push : (...items: readonly Services.TextEdit[]) => number
 >currentEdit : Services.TextEdit
 
                     current++;
@@ -7498,9 +7498,9 @@ module Harness {
 
                     result.push(currentEdit);
 >result.push(currentEdit) : number
->result.push : (...items: Services.TextEdit[]) => number
+>result.push : (...items: readonly Services.TextEdit[]) => number
 >result : Services.TextEdit[]
->push : (...items: Services.TextEdit[]) => number
+>push : (...items: readonly Services.TextEdit[]) => number
 >currentEdit : Services.TextEdit
 
                     current = next;
@@ -7549,9 +7549,9 @@ module Harness {
 
             return JSON.stringify({ usePullLanguageService: usePull });
 >JSON.stringify({ usePullLanguageService: usePull }) : string
->JSON.stringify : { (value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string; (value: any, replacer?: (string | number)[], space?: string | number): string; }
+>JSON.stringify : { (value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string; (value: any, replacer?: readonly (string | number)[], space?: string | number): string; }
 >JSON : JSON
->stringify : { (value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string; (value: any, replacer?: (string | number)[], space?: string | number): string; }
+>stringify : { (value: any, replacer?: (this: any, key: string, value: any) => any, space?: string | number): string; (value: any, replacer?: readonly (string | number)[], space?: string | number): string; }
 >{ usePullLanguageService: usePull } : { usePullLanguageService: boolean; }
 >usePullLanguageService : boolean
 >usePull : boolean
@@ -7582,11 +7582,11 @@ module Harness {
 
             Runnable.currentStack.push(currentRun);
 >Runnable.currentStack.push(currentRun) : number
->Runnable.currentStack.push : (...items: Runnable[]) => number
+>Runnable.currentStack.push : (...items: readonly Runnable[]) => number
 >Runnable.currentStack : Runnable[]
 >Runnable : typeof Runnable
 >currentStack : Runnable[]
->push : (...items: Runnable[]) => number
+>push : (...items: readonly Runnable[]) => number
 >currentRun : Run
         }
 
@@ -8055,9 +8055,9 @@ module Harness {
 >reportContent = reportContent.replace(htmlTrailer, '') : string
 >reportContent : string
 >reportContent.replace(htmlTrailer, '') : string
->reportContent.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>reportContent.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >reportContent : string
->replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >htmlTrailer : string
 >'' : ""
 
@@ -8226,9 +8226,9 @@ module Harness {
 >expected = expected.replace(/\r\n?/g, '\n') : string
 >expected : string
 >expected.replace(/\r\n?/g, '\n') : string
->expected.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>expected.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >expected : string
->replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >/\r\n?/g : RegExp
 >'\n' : "\n"
 
@@ -8236,9 +8236,9 @@ module Harness {
 >actual = actual.replace(/\r\n?/g, '\n') : string
 >actual : string
 >actual.replace(/\r\n?/g, '\n') : string
->actual.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>actual.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >actual : string
->replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >/\r\n?/g : RegExp
 >'\n' : "\n"
             }

@@ -30,11 +30,11 @@ const C = class {
 >this.#baz().next().value || 0 : number
 >this.#baz().next().value : number | void
 >this.#baz().next() : IteratorResult<number, void>
->this.#baz().next : (...args: [] | [unknown]) => IteratorResult<number, void>
+>this.#baz().next : (...args: readonly [] | readonly [unknown]) => IteratorResult<number, void>
 >this.#baz() : Generator<number, void, unknown>
 >this.#baz : () => Generator<number, void, unknown>
 >this : typeof C
->next : (...args: [] | [unknown]) => IteratorResult<number, void>
+>next : (...args: readonly [] | readonly [unknown]) => IteratorResult<number, void>
 >value : number | void
 >0 : 0
 >((await this.#qux().next()).value || 0) : number
@@ -43,11 +43,11 @@ const C = class {
 >(await this.#qux().next()) : IteratorResult<number, void>
 >await this.#qux().next() : IteratorResult<number, void>
 >this.#qux().next() : Promise<IteratorResult<number, void>>
->this.#qux().next : (...args: [] | [unknown]) => Promise<IteratorResult<number, void>>
+>this.#qux().next : (...args: readonly [] | readonly [unknown]) => Promise<IteratorResult<number, void>>
 >this.#qux() : AsyncGenerator<number, void, unknown>
 >this.#qux : () => AsyncGenerator<number, void, unknown>
 >this : typeof C
->next : (...args: [] | [unknown]) => Promise<IteratorResult<number, void>>
+>next : (...args: readonly [] | readonly [unknown]) => Promise<IteratorResult<number, void>>
 >value : number | void
 >0 : 0
     }

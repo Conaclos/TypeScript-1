@@ -9,9 +9,9 @@ export function register(data: any) {
 
   r.push(data);
 >r.push(data) : number
->r.push : (...items: any[]) => number
+>r.push : (...items: readonly any[]) => number
 >r : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >data : any
 }
 === tests/cases/compiler/data1.ts ===

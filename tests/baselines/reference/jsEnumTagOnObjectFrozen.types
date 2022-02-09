@@ -49,9 +49,9 @@ cbThing(type => {
 const Thing = Object.freeze({
 >Thing : Readonly<{ a: string; b: string; }>
 >Object.freeze({    a: "thing",    b: "chill"}) : Readonly<{ a: string; b: string; }>
->Object.freeze : { <T>(a: T[]): readonly T[]; <T extends Function>(f: T): T; <T>(o: T): Readonly<T>; }
+>Object.freeze : { <T>(a: readonly T[]): readonly T[]; <T extends Function>(f: T): T; <T>(o: T): Readonly<T>; }
 >Object : ObjectConstructor
->freeze : { <T>(a: T[]): readonly T[]; <T extends Function>(f: T): T; <T>(o: T): Readonly<T>; }
+>freeze : { <T>(a: readonly T[]): readonly T[]; <T extends Function>(f: T): T; <T>(o: T): Readonly<T>; }
 >{    a: "thing",    b: "chill"} : { a: string; b: string; }
 
     a: "thing",

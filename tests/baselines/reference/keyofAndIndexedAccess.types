@@ -1699,11 +1699,11 @@ function addToMyThingy<S extends KeyTypes>(key: S) {
 
     MyThingy[key].push("a");
 >MyThingy[key].push("a") : number
->MyThingy[key].push : (...items: string[]) => number
+>MyThingy[key].push : (...items: readonly string[]) => number
 >MyThingy[key] : { a: string[]; b: string[]; }[S]
 >MyThingy : { a: string[]; b: string[]; }
 >key : S
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >"a" : "a"
 }
 
@@ -1876,9 +1876,9 @@ class SampleClass<P> {
 >this : this
 >props : Readonly<P>
 >Object.freeze(props) : Readonly<P>
->Object.freeze : { <T>(a: T[]): readonly T[]; <T extends Function>(f: T): T; <T>(o: T): Readonly<T>; }
+>Object.freeze : { <T>(a: readonly T[]): readonly T[]; <T extends Function>(f: T): T; <T>(o: T): Readonly<T>; }
 >Object : ObjectConstructor
->freeze : { <T>(a: T[]): readonly T[]; <T extends Function>(f: T): T; <T>(o: T): Readonly<T>; }
+>freeze : { <T>(a: readonly T[]): readonly T[]; <T extends Function>(f: T): T; <T>(o: T): Readonly<T>; }
 >props : P
     }
 }
@@ -1919,13 +1919,13 @@ class AnotherSampleClass<T> extends SampleClass<T & Foo> {
 >brokenMethod : () => void
 
         this.props.foo.concat;
->this.props.foo.concat : (...strings: string[]) => string
+>this.props.foo.concat : (...strings: readonly string[]) => string
 >this.props.foo : (T & Foo)["foo"]
 >this.props : Readonly<T & Foo>
 >this : this
 >props : Readonly<T & Foo>
 >foo : (T & Foo)["foo"]
->concat : (...strings: string[]) => string
+>concat : (...strings: readonly string[]) => string
     }
 }
 new AnotherSampleClass({});

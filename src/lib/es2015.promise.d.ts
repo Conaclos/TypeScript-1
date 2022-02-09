@@ -18,7 +18,7 @@ interface PromiseConstructor {
      * @param values An array of Promises.
      * @returns A new Promise.
      */
-    all<T extends readonly unknown[] | []>(values: T): Promise<{ -readonly [P in keyof T]: Awaited<T[P]> }>;
+    all<T extends readonly unknown[] | readonly []>(values: T): Promise<{ -readonly [P in keyof T]: Awaited<T[P]> }>;
 
     // see: lib.es2015.iterable.d.ts
     // all<T>(values: Iterable<T | PromiseLike<T>>): Promise<T[]>;
@@ -29,7 +29,7 @@ interface PromiseConstructor {
      * @param values An array of Promises.
      * @returns A new Promise.
      */
-    race<T extends readonly unknown[] | []>(values: T): Promise<Awaited<T[number]>>;
+    race<T extends readonly unknown[] | readonly []>(values: T): Promise<Awaited<T[number]>>;
 
     // see: lib.es2015.iterable.d.ts
     // race<T>(values: Iterable<T>): Promise<T extends PromiseLike<infer U> ? U : T>;

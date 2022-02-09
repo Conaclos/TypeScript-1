@@ -222,11 +222,11 @@ module TypeScript {
 
             this.asts.push(ast);
 >this.asts.push(ast) : number
->this.asts.push : (...items: TypeScript.AST[]) => number
+>this.asts.push : (...items: readonly TypeScript.AST[]) => number
 >this.asts : TypeScript.AST[]
 >this : this
 >asts : TypeScript.AST[]
->push : (...items: TypeScript.AST[]) => number
+>push : (...items: readonly TypeScript.AST[]) => number
 >ast : TypeScript.AST
         }
 

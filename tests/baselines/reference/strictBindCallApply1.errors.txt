@@ -1,8 +1,8 @@
 tests/cases/conformance/functions/strictBindCallApply1.ts(11,11): error TS2769: No overload matches this call.
   Overload 1 of 6, '(this: (this: undefined, arg0: 10, arg1: string) => string, thisArg: undefined, arg0: 10, arg1: string): () => string', gave the following error.
     Argument of type 'number' is not assignable to parameter of type 'string'.
-  Overload 2 of 6, '(this: (this: undefined, ...args: (10 | 20)[]) => string, thisArg: undefined, ...args: (10 | 20)[]): (...args: (10 | 20)[]) => string', gave the following error.
-    The 'this' context of type '(a: number, b: string) => string' is not assignable to method's 'this' of type '(this: undefined, ...args: (10 | 20)[]) => string'.
+  Overload 2 of 6, '(this: (this: undefined, ...args: readonly (10 | 20)[]) => string, thisArg: undefined, ...args: readonly (10 | 20)[]): (...args: readonly (10 | 20)[]) => string', gave the following error.
+    The 'this' context of type '(a: number, b: string) => string' is not assignable to method's 'this' of type '(this: undefined, ...args: readonly (10 | 20)[]) => string'.
       Types of parameters 'b' and 'args' are incompatible.
         Type 'number' is not assignable to type 'string'.
           Type 'number' is not assignable to type 'string'.
@@ -17,16 +17,16 @@ tests/cases/conformance/functions/strictBindCallApply1.ts(24,32): error TS2345: 
 tests/cases/conformance/functions/strictBindCallApply1.ts(41,11): error TS2769: No overload matches this call.
   Overload 1 of 6, '(this: (this: C, arg0: 10, arg1: string) => string, thisArg: C, arg0: 10, arg1: string): () => string', gave the following error.
     Argument of type 'number' is not assignable to parameter of type 'string'.
-  Overload 2 of 6, '(this: (this: C, ...args: (10 | 20)[]) => string, thisArg: C, ...args: (10 | 20)[]): (...args: (10 | 20)[]) => string', gave the following error.
-    The 'this' context of type '(this: C, a: number, b: string) => string' is not assignable to method's 'this' of type '(this: C, ...args: (10 | 20)[]) => string'.
+  Overload 2 of 6, '(this: (this: C, ...args: readonly (10 | 20)[]) => string, thisArg: C, ...args: readonly (10 | 20)[]): (...args: readonly (10 | 20)[]) => string', gave the following error.
+    The 'this' context of type '(this: C, a: number, b: string) => string' is not assignable to method's 'this' of type '(this: C, ...args: readonly (10 | 20)[]) => string'.
       Types of parameters 'b' and 'args' are incompatible.
         Type 'number' is not assignable to type 'string'.
           Type 'number' is not assignable to type 'string'.
 tests/cases/conformance/functions/strictBindCallApply1.ts(42,11): error TS2769: No overload matches this call.
   Overload 1 of 6, '(this: (this: C, a: number, b: string) => string, thisArg: C): (a: number, b: string) => string', gave the following error.
     Argument of type 'undefined' is not assignable to parameter of type 'C'.
-  Overload 2 of 6, '(this: (this: C, ...args: (string | number)[]) => string, thisArg: C, ...args: (string | number)[]): (...args: (string | number)[]) => string', gave the following error.
-    The 'this' context of type '(this: C, a: number, b: string) => string' is not assignable to method's 'this' of type '(this: C, ...args: (string | number)[]) => string'.
+  Overload 2 of 6, '(this: (this: C, ...args: readonly (string | number)[]) => string, thisArg: C, ...args: readonly (string | number)[]): (...args: readonly (string | number)[]) => string', gave the following error.
+    The 'this' context of type '(this: C, a: number, b: string) => string' is not assignable to method's 'this' of type '(this: C, ...args: readonly (string | number)[]) => string'.
       Types of parameters 'a' and 'args' are incompatible.
         Type 'string | number' is not assignable to type 'number'.
           Type 'string' is not assignable to type 'number'.
@@ -43,10 +43,10 @@ tests/cases/conformance/functions/strictBindCallApply1.ts(57,23): error TS2345: 
 tests/cases/conformance/functions/strictBindCallApply1.ts(62,11): error TS2769: No overload matches this call.
   Overload 1 of 6, '(this: new (arg0: 10, arg1: string) => C, thisArg: any, arg0: 10, arg1: string): new () => C', gave the following error.
     Argument of type 'number' is not assignable to parameter of type 'string'.
-  Overload 2 of 6, '(this: new (...args: (10 | 20)[]) => C, thisArg: any, ...args: (10 | 20)[]): new (...args: (10 | 20)[]) => C', gave the following error.
-    The 'this' context of type 'typeof C' is not assignable to method's 'this' of type 'new (...args: (10 | 20)[]) => C'.
+  Overload 2 of 6, '(this: new (...args: readonly (10 | 20)[]) => C, thisArg: any, ...args: readonly (10 | 20)[]): new (...args: readonly (10 | 20)[]) => C', gave the following error.
+    The 'this' context of type 'typeof C' is not assignable to method's 'this' of type 'new (...args: readonly (10 | 20)[]) => C'.
       Types of construct signatures are incompatible.
-        Type 'new (a: number, b: string) => C' is not assignable to type 'new (...args: (10 | 20)[]) => C'.
+        Type 'new (a: number, b: string) => C' is not assignable to type 'new (...args: readonly (10 | 20)[]) => C'.
           Types of parameters 'b' and 'args' are incompatible.
             Type 'number' is not assignable to type 'string'.
               Type 'number' is not assignable to type 'string'.
@@ -76,8 +76,8 @@ tests/cases/conformance/functions/strictBindCallApply1.ts(72,12): error TS2345: 
 !!! error TS2769: No overload matches this call.
 !!! error TS2769:   Overload 1 of 6, '(this: (this: undefined, arg0: 10, arg1: string) => string, thisArg: undefined, arg0: 10, arg1: string): () => string', gave the following error.
 !!! error TS2769:     Argument of type 'number' is not assignable to parameter of type 'string'.
-!!! error TS2769:   Overload 2 of 6, '(this: (this: undefined, ...args: (10 | 20)[]) => string, thisArg: undefined, ...args: (10 | 20)[]): (...args: (10 | 20)[]) => string', gave the following error.
-!!! error TS2769:     The 'this' context of type '(a: number, b: string) => string' is not assignable to method's 'this' of type '(this: undefined, ...args: (10 | 20)[]) => string'.
+!!! error TS2769:   Overload 2 of 6, '(this: (this: undefined, ...args: readonly (10 | 20)[]) => string, thisArg: undefined, ...args: readonly (10 | 20)[]): (...args: readonly (10 | 20)[]) => string', gave the following error.
+!!! error TS2769:     The 'this' context of type '(a: number, b: string) => string' is not assignable to method's 'this' of type '(this: undefined, ...args: readonly (10 | 20)[]) => string'.
 !!! error TS2769:       Types of parameters 'b' and 'args' are incompatible.
 !!! error TS2769:         Type 'number' is not assignable to type 'string'.
 !!! error TS2769:           Type 'number' is not assignable to type 'string'.
@@ -129,8 +129,8 @@ tests/cases/conformance/functions/strictBindCallApply1.ts(72,12): error TS2345: 
 !!! error TS2769: No overload matches this call.
 !!! error TS2769:   Overload 1 of 6, '(this: (this: C, arg0: 10, arg1: string) => string, thisArg: C, arg0: 10, arg1: string): () => string', gave the following error.
 !!! error TS2769:     Argument of type 'number' is not assignable to parameter of type 'string'.
-!!! error TS2769:   Overload 2 of 6, '(this: (this: C, ...args: (10 | 20)[]) => string, thisArg: C, ...args: (10 | 20)[]): (...args: (10 | 20)[]) => string', gave the following error.
-!!! error TS2769:     The 'this' context of type '(this: C, a: number, b: string) => string' is not assignable to method's 'this' of type '(this: C, ...args: (10 | 20)[]) => string'.
+!!! error TS2769:   Overload 2 of 6, '(this: (this: C, ...args: readonly (10 | 20)[]) => string, thisArg: C, ...args: readonly (10 | 20)[]): (...args: readonly (10 | 20)[]) => string', gave the following error.
+!!! error TS2769:     The 'this' context of type '(this: C, a: number, b: string) => string' is not assignable to method's 'this' of type '(this: C, ...args: readonly (10 | 20)[]) => string'.
 !!! error TS2769:       Types of parameters 'b' and 'args' are incompatible.
 !!! error TS2769:         Type 'number' is not assignable to type 'string'.
 !!! error TS2769:           Type 'number' is not assignable to type 'string'.
@@ -139,8 +139,8 @@ tests/cases/conformance/functions/strictBindCallApply1.ts(72,12): error TS2345: 
 !!! error TS2769: No overload matches this call.
 !!! error TS2769:   Overload 1 of 6, '(this: (this: C, a: number, b: string) => string, thisArg: C): (a: number, b: string) => string', gave the following error.
 !!! error TS2769:     Argument of type 'undefined' is not assignable to parameter of type 'C'.
-!!! error TS2769:   Overload 2 of 6, '(this: (this: C, ...args: (string | number)[]) => string, thisArg: C, ...args: (string | number)[]): (...args: (string | number)[]) => string', gave the following error.
-!!! error TS2769:     The 'this' context of type '(this: C, a: number, b: string) => string' is not assignable to method's 'this' of type '(this: C, ...args: (string | number)[]) => string'.
+!!! error TS2769:   Overload 2 of 6, '(this: (this: C, ...args: readonly (string | number)[]) => string, thisArg: C, ...args: readonly (string | number)[]): (...args: readonly (string | number)[]) => string', gave the following error.
+!!! error TS2769:     The 'this' context of type '(this: C, a: number, b: string) => string' is not assignable to method's 'this' of type '(this: C, ...args: readonly (string | number)[]) => string'.
 !!! error TS2769:       Types of parameters 'a' and 'args' are incompatible.
 !!! error TS2769:         Type 'string | number' is not assignable to type 'number'.
 !!! error TS2769:           Type 'string' is not assignable to type 'number'.
@@ -186,10 +186,10 @@ tests/cases/conformance/functions/strictBindCallApply1.ts(72,12): error TS2345: 
 !!! error TS2769: No overload matches this call.
 !!! error TS2769:   Overload 1 of 6, '(this: new (arg0: 10, arg1: string) => C, thisArg: any, arg0: 10, arg1: string): new () => C', gave the following error.
 !!! error TS2769:     Argument of type 'number' is not assignable to parameter of type 'string'.
-!!! error TS2769:   Overload 2 of 6, '(this: new (...args: (10 | 20)[]) => C, thisArg: any, ...args: (10 | 20)[]): new (...args: (10 | 20)[]) => C', gave the following error.
-!!! error TS2769:     The 'this' context of type 'typeof C' is not assignable to method's 'this' of type 'new (...args: (10 | 20)[]) => C'.
+!!! error TS2769:   Overload 2 of 6, '(this: new (...args: readonly (10 | 20)[]) => C, thisArg: any, ...args: readonly (10 | 20)[]): new (...args: readonly (10 | 20)[]) => C', gave the following error.
+!!! error TS2769:     The 'this' context of type 'typeof C' is not assignable to method's 'this' of type 'new (...args: readonly (10 | 20)[]) => C'.
 !!! error TS2769:       Types of construct signatures are incompatible.
-!!! error TS2769:         Type 'new (a: number, b: string) => C' is not assignable to type 'new (...args: (10 | 20)[]) => C'.
+!!! error TS2769:         Type 'new (a: number, b: string) => C' is not assignable to type 'new (...args: readonly (10 | 20)[]) => C'.
 !!! error TS2769:           Types of parameters 'b' and 'args' are incompatible.
 !!! error TS2769:             Type 'number' is not assignable to type 'string'.
 !!! error TS2769:               Type 'number' is not assignable to type 'string'.

@@ -87,38 +87,38 @@ a.unknowable = 'hi'
 
 a.empty.push(1)
 >a.empty.push(1) : number
->a.empty.push : (...items: any[]) => number
+>a.empty.push : (...items: readonly any[]) => number
 >a.empty : any[]
 >a : A
 >empty : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >1 : 1
 
 a.empty.push(true)
 >a.empty.push(true) : number
->a.empty.push : (...items: any[]) => number
+>a.empty.push : (...items: readonly any[]) => number
 >a.empty : any[]
 >a : A
 >empty : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >true : true
 
 a.empty.push({})
 >a.empty.push({}) : number
->a.empty.push : (...items: any[]) => number
+>a.empty.push : (...items: readonly any[]) => number
 >a.empty : any[]
 >a : A
 >empty : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >{} : {}
 
 a.empty.push('hi')
 >a.empty.push('hi') : number
->a.empty.push : (...items: any[]) => number
+>a.empty.push : (...items: readonly any[]) => number
 >a.empty : any[]
 >a : A
 >empty : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >'hi' : "hi"
 
 /** @type {number | undefined} */
@@ -185,16 +185,16 @@ function f(a = null, b = n, l = []) {
     // l should be any[]
     l.push(1)
 >l.push(1) : number
->l.push : (...items: any[]) => number
+>l.push : (...items: readonly any[]) => number
 >l : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >1 : 1
 
     l.push('ok')
 >l.push('ok') : number
->l.push : (...items: any[]) => number
+>l.push : (...items: readonly any[]) => number
 >l : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >'ok' : "ok"
 }
 
@@ -234,9 +234,9 @@ u = 'ok'
 
 l.push('ok')
 >l.push('ok') : number
->l.push : (...items: any[]) => number
+>l.push : (...items: readonly any[]) => number
 >l : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >'ok' : "ok"
 
 /** @type {(v: unknown) => v is undefined} */

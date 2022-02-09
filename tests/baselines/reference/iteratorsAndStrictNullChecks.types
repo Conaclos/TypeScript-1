@@ -28,9 +28,9 @@ const ys = [4, 5];
 
 xs.push(...ys);
 >xs.push(...ys) : number
->xs.push : (...items: number[]) => number
+>xs.push : (...items: readonly number[]) => number
 >xs : number[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >...ys : number
 >ys : number[]
 

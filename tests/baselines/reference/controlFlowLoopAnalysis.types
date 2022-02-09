@@ -118,9 +118,9 @@ function mapUntilCant<a, b>(
 
             result.push(mapping(value, index));
 >result.push(mapping(value, index)) : number
->result.push : (...items: b[]) => number
+>result.push : (...items: readonly b[]) => number
 >result : b[]
->push : (...items: b[]) => number
+>push : (...items: readonly b[]) => number
 >mapping(value, index) : b
 >mapping : (value: a, index: number) => b
 >value : a

@@ -198,7 +198,7 @@ interface ObjectConstructor {
      * Prevents the modification of existing property attributes and values, and prevents the addition of new properties.
      * @param a Object on which to lock the attributes.
      */
-    freeze<T>(a: T[]): readonly T[];
+    freeze<T>(a: readonly T[]): readonly T[];
 
     /**
      * Prevents the modification of existing property attributes and values, and prevents the addition of new properties.
@@ -264,7 +264,7 @@ interface Function {
      * @param thisArg The object to be used as the current object.
      * @param argArray A list of arguments to be passed to the method.
      */
-    call(this: Function, thisArg: any, ...argArray: any[]): any;
+    call(this: Function, thisArg: any, ...argArray: readonly any[]): any;
 
     /**
      * For a given function, creates a bound function that has the same body as the original function.
@@ -272,7 +272,7 @@ interface Function {
      * @param thisArg An object to which the this keyword can refer inside the new function.
      * @param argArray A list of arguments to be passed to the new function.
      */
-    bind(this: Function, thisArg: any, ...argArray: any[]): any;
+    bind(this: Function, thisArg: any, ...argArray: readonly any[]): any;
 
     /** Returns a string representation of a function. */
     toString(): string;
@@ -290,8 +290,8 @@ interface FunctionConstructor {
      * Creates a new function.
      * @param args A list of arguments the function accepts.
      */
-    new(...args: string[]): Function;
-    (...args: string[]): Function;
+    new(...args: readonly string[]): Function;
+    (...args: readonly string[]): Function;
     readonly prototype: Function;
 }
 
@@ -300,7 +300,7 @@ declare var Function: FunctionConstructor;
 /**
  * Extracts the type of the 'this' parameter of a function type, or 'unknown' if the function type has no 'this' parameter.
  */
-type ThisParameterType<T> = T extends (this: infer U, ...args: any[]) => any ? U : unknown;
+type ThisParameterType<T> = T extends (this: infer U, ...args: readonly any[]) => any ? U : unknown;
 
 /**
  * Removes the 'this' parameter from a function type.
@@ -314,14 +314,14 @@ interface CallableFunction extends Function {
      * @param args An array of argument values to be passed to the function.
      */
     apply<T, R>(this: (this: T) => R, thisArg: T): R;
-    apply<T, A extends any[], R>(this: (this: T, ...args: A) => R, thisArg: T, args: A): R;
+    apply<T, A extends readonly any[], R>(this: (this: T, ...args: A) => R, thisArg: T, args: A): R;
 
     /**
      * Calls the function with the specified object as the this value and the specified rest arguments as the arguments.
      * @param thisArg The object to be used as the this object.
      * @param args Argument values to be passed to the function.
      */
-    call<T, A extends any[], R>(this: (this: T, ...args: A) => R, thisArg: T, ...args: A): R;
+    call<T, A extends readonly any[], R>(this: (this: T, ...args: A) => R, thisArg: T, ...args: A): R;
 
     /**
      * For a given function, creates a bound function that has the same body as the original function.
@@ -330,11 +330,11 @@ interface CallableFunction extends Function {
      * @param args Arguments to bind to the parameters of the function.
      */
     bind<T>(this: T, thisArg: ThisParameterType<T>): OmitThisParameter<T>;
-    bind<T, A0, A extends any[], R>(this: (this: T, arg0: A0, ...args: A) => R, thisArg: T, arg0: A0): (...args: A) => R;
-    bind<T, A0, A1, A extends any[], R>(this: (this: T, arg0: A0, arg1: A1, ...args: A) => R, thisArg: T, arg0: A0, arg1: A1): (...args: A) => R;
-    bind<T, A0, A1, A2, A extends any[], R>(this: (this: T, arg0: A0, arg1: A1, arg2: A2, ...args: A) => R, thisArg: T, arg0: A0, arg1: A1, arg2: A2): (...args: A) => R;
-    bind<T, A0, A1, A2, A3, A extends any[], R>(this: (this: T, arg0: A0, arg1: A1, arg2: A2, arg3: A3, ...args: A) => R, thisArg: T, arg0: A0, arg1: A1, arg2: A2, arg3: A3): (...args: A) => R;
-    bind<T, AX, R>(this: (this: T, ...args: AX[]) => R, thisArg: T, ...args: AX[]): (...args: AX[]) => R;
+    bind<T, A0, A extends readonly any[], R>(this: (this: T, arg0: A0, ...args: A) => R, thisArg: T, arg0: A0): (...args: A) => R;
+    bind<T, A0, A1, A extends readonly any[], R>(this: (this: T, arg0: A0, arg1: A1, ...args: A) => R, thisArg: T, arg0: A0, arg1: A1): (...args: A) => R;
+    bind<T, A0, A1, A2, A extends readonly any[], R>(this: (this: T, arg0: A0, arg1: A1, arg2: A2, ...args: A) => R, thisArg: T, arg0: A0, arg1: A1, arg2: A2): (...args: A) => R;
+    bind<T, A0, A1, A2, A3, A extends readonly any[], R>(this: (this: T, arg0: A0, arg1: A1, arg2: A2, arg3: A3, ...args: A) => R, thisArg: T, arg0: A0, arg1: A1, arg2: A2, arg3: A3): (...args: A) => R;
+    bind<T, AX, R>(this: (this: T, ...args: readonly AX[]) => R, thisArg: T, ...args: readonly AX[]): (...args: readonly AX[]) => R;
 }
 
 interface NewableFunction extends Function {
@@ -344,14 +344,14 @@ interface NewableFunction extends Function {
      * @param args An array of argument values to be passed to the function.
      */
     apply<T>(this: new () => T, thisArg: T): void;
-    apply<T, A extends any[]>(this: new (...args: A) => T, thisArg: T, args: A): void;
+    apply<T, A extends readonly any[]>(this: new (...args: A) => T, thisArg: T, args: A): void;
 
     /**
      * Calls the function with the specified object as the this value and the specified rest arguments as the arguments.
      * @param thisArg The object to be used as the this object.
      * @param args Argument values to be passed to the function.
      */
-    call<T, A extends any[]>(this: new (...args: A) => T, thisArg: T, ...args: A): void;
+    call<T, A extends readonly any[]>(this: new (...args: A) => T, thisArg: T, ...args: A): void;
 
     /**
      * For a given function, creates a bound function that has the same body as the original function.
@@ -360,11 +360,11 @@ interface NewableFunction extends Function {
      * @param args Arguments to bind to the parameters of the function.
      */
     bind<T>(this: T, thisArg: any): T;
-    bind<A0, A extends any[], R>(this: new (arg0: A0, ...args: A) => R, thisArg: any, arg0: A0): new (...args: A) => R;
-    bind<A0, A1, A extends any[], R>(this: new (arg0: A0, arg1: A1, ...args: A) => R, thisArg: any, arg0: A0, arg1: A1): new (...args: A) => R;
-    bind<A0, A1, A2, A extends any[], R>(this: new (arg0: A0, arg1: A1, arg2: A2, ...args: A) => R, thisArg: any, arg0: A0, arg1: A1, arg2: A2): new (...args: A) => R;
-    bind<A0, A1, A2, A3, A extends any[], R>(this: new (arg0: A0, arg1: A1, arg2: A2, arg3: A3, ...args: A) => R, thisArg: any, arg0: A0, arg1: A1, arg2: A2, arg3: A3): new (...args: A) => R;
-    bind<AX, R>(this: new (...args: AX[]) => R, thisArg: any, ...args: AX[]): new (...args: AX[]) => R;
+    bind<A0, A extends readonly any[], R>(this: new (arg0: A0, ...args: A) => R, thisArg: any, arg0: A0): new (...args: A) => R;
+    bind<A0, A1, A extends readonly any[], R>(this: new (arg0: A0, arg1: A1, ...args: A) => R, thisArg: any, arg0: A0, arg1: A1): new (...args: A) => R;
+    bind<A0, A1, A2, A extends readonly any[], R>(this: new (arg0: A0, arg1: A1, arg2: A2, ...args: A) => R, thisArg: any, arg0: A0, arg1: A1, arg2: A2): new (...args: A) => R;
+    bind<A0, A1, A2, A3, A extends readonly any[], R>(this: new (arg0: A0, arg1: A1, arg2: A2, arg3: A3, ...args: A) => R, thisArg: any, arg0: A0, arg1: A1, arg2: A2, arg3: A3): new (...args: A) => R;
+    bind<AX, R>(this: new (...args: readonly AX[]) => R, thisArg: any, ...args: readonly AX[]): new (...args: readonly AX[]) => R;
 }
 
 interface IArguments {
@@ -393,7 +393,7 @@ interface String {
      * Returns a string that contains the concatenation of two or more strings.
      * @param strings The strings to append to the end of the string.
      */
-    concat(...strings: string[]): string;
+    concat(...strings: readonly string[]): string;
 
     /**
      * Returns the position of the first occurrence of a substring.
@@ -433,7 +433,7 @@ interface String {
      * @param searchValue A string to search for.
      * @param replacer A function that returns the replacement text.
      */
-    replace(searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string;
+    replace(searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string;
 
     /**
      * Finds the first substring match in a regular expression search.
@@ -468,13 +468,13 @@ interface String {
     toLowerCase(): string;
 
     /** Converts all alphabetic characters to lowercase, taking into account the host environment's current locale. */
-    toLocaleLowerCase(locales?: string | string[]): string;
+    toLocaleLowerCase(locales?: string | readonly string[]): string;
 
     /** Converts all the alphabetic characters in a string to uppercase. */
     toUpperCase(): string;
 
     /** Returns a string where all alphabetic characters have been converted to uppercase, taking into account the host environment's current locale. */
-    toLocaleUpperCase(locales?: string | string[]): string;
+    toLocaleUpperCase(locales?: string | readonly string[]): string;
 
     /** Removes the leading and trailing white space and line terminator characters from a string. */
     trim(): string;
@@ -501,7 +501,7 @@ interface StringConstructor {
     new(value?: any): String;
     (value?: any): string;
     readonly prototype: String;
-    fromCharCode(...codes: number[]): string;
+    fromCharCode(...codes: readonly number[]): string;
 }
 
 /**
@@ -687,12 +687,12 @@ interface Math {
      * Returns the larger of a set of supplied numeric expressions.
      * @param values Numeric expressions to be evaluated.
      */
-    max(...values: number[]): number;
+    max(...values: readonly number[]): number;
     /**
      * Returns the smaller of a set of supplied numeric expressions.
      * @param values Numeric expressions to be evaluated.
      */
-    min(...values: number[]): number;
+    min(...values: readonly number[]): number;
     /**
      * Returns the value of a base expression taken to a specified power.
      * @param x The base value of the expression.
@@ -1099,7 +1099,7 @@ interface JSON {
      * @param replacer An array of strings and numbers that acts as an approved list for selecting the object properties that will be stringified.
      * @param space Adds indentation, white space, and line break characters to the return-value JSON text to make it easier to read.
      */
-    stringify(value: any, replacer?: (number | string)[] | null, space?: string | number): string;
+    stringify(value: any, replacer?: readonly (number | string)[] | null, space?: string | number): string;
 }
 
 /**
@@ -1129,12 +1129,12 @@ interface ReadonlyArray<T> {
      * Combines two or more arrays.
      * @param items Additional items to add to the end of array1.
      */
-    concat(...items: ConcatArray<T>[]): T[];
+    concat(...items: readonly ConcatArray<T>[]): T[];
     /**
      * Combines two or more arrays.
      * @param items Additional items to add to the end of array1.
      */
-    concat(...items: (T | ConcatArray<T>)[]): T[];
+    concat(...items: readonly (T | ConcatArray<T>)[]): T[];
     /**
      * Adds all the elements of an array separated by the specified separator string.
      * @param separator A string used to separate one element of an array from the next in the resulting String. If omitted, the array elements are separated with a comma.
@@ -1268,19 +1268,19 @@ interface Array<T> {
      * Appends new elements to the end of an array, and returns the new length of the array.
      * @param items New elements to add to the array.
      */
-    push(...items: T[]): number;
+    push(...items: readonly T[]): number;
     /**
      * Combines two or more arrays.
      * This method returns a new array without modifying any existing arrays.
      * @param items Additional arrays and/or items to add to the end of the array.
      */
-    concat(...items: ConcatArray<T>[]): T[];
+    concat(...items: readonly ConcatArray<T>[]): T[];
     /**
      * Combines two or more arrays.
      * This method returns a new array without modifying any existing arrays.
      * @param items Additional arrays and/or items to add to the end of the array.
      */
-    concat(...items: (T | ConcatArray<T>)[]): T[];
+    concat(...items: readonly (T | ConcatArray<T>)[]): T[];
     /**
      * Adds all the elements of an array into a string, separated by the specified separator string.
      * @param separator A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma.
@@ -1331,12 +1331,12 @@ interface Array<T> {
      * @param items Elements to insert into the array in place of the deleted elements.
      * @returns An array containing the elements that were deleted.
      */
-    splice(start: number, deleteCount: number, ...items: T[]): T[];
+    splice(start: number, deleteCount: number, ...items: readonly T[]): T[];
     /**
      * Inserts new elements at the start of an array, and returns the new length of the array.
      * @param items Elements to insert at the start of the array.
      */
-    unshift(...items: T[]): number;
+    unshift(...items: readonly T[]): number;
     /**
      * Returns the index of the first occurrence of a value in an array, or -1 if it is not present.
      * @param searchElement The value to locate in the array.
@@ -1433,10 +1433,10 @@ interface Array<T> {
 interface ArrayConstructor {
     new(arrayLength?: number): any[];
     new <T>(arrayLength: number): T[];
-    new <T>(...items: T[]): T[];
+    new <T>(...items: readonly T[]): T[];
     (arrayLength?: number): any[];
     <T>(arrayLength: number): T[];
-    <T>(...items: T[]): T[];
+    <T>(...items: readonly T[]): T[];
     isArray(arg: any): arg is any[];
     readonly prototype: any[];
 }
@@ -2051,7 +2051,7 @@ interface Int8ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Int8Array;
+    of(...items: readonly number[]): Int8Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -2334,7 +2334,7 @@ interface Uint8ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Uint8Array;
+    of(...items: readonly number[]): Uint8Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -2616,7 +2616,7 @@ interface Uint8ClampedArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Uint8ClampedArray;
+    of(...items: readonly number[]): Uint8ClampedArray;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -2896,7 +2896,7 @@ interface Int16ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Int16Array;
+    of(...items: readonly number[]): Int16Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -3179,7 +3179,7 @@ interface Uint16ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Uint16Array;
+    of(...items: readonly number[]): Uint16Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -3461,7 +3461,7 @@ interface Int32ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Int32Array;
+    of(...items: readonly number[]): Int32Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -3742,7 +3742,7 @@ interface Uint32ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Uint32Array;
+    of(...items: readonly number[]): Uint32Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -4024,7 +4024,7 @@ interface Float32ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Float32Array;
+    of(...items: readonly number[]): Float32Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -4298,7 +4298,7 @@ interface Float64ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: number[]): Float64Array;
+    of(...items: readonly number[]): Float64Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -4346,8 +4346,8 @@ declare namespace Intl {
         resolvedOptions(): ResolvedCollatorOptions;
     }
     var Collator: {
-        new(locales?: string | string[], options?: CollatorOptions): Collator;
-        (locales?: string | string[], options?: CollatorOptions): Collator;
+        new(locales?: string | readonly string[], options?: CollatorOptions): Collator;
+        (locales?: string | readonly string[], options?: CollatorOptions): Collator;
         supportedLocalesOf(locales: string | string[], options?: CollatorOptions): string[];
     };
 
@@ -4382,9 +4382,9 @@ declare namespace Intl {
         resolvedOptions(): ResolvedNumberFormatOptions;
     }
     var NumberFormat: {
-        new(locales?: string | string[], options?: NumberFormatOptions): NumberFormat;
-        (locales?: string | string[], options?: NumberFormatOptions): NumberFormat;
-        supportedLocalesOf(locales: string | string[], options?: NumberFormatOptions): string[];
+        new(locales?: string | readonly string[], options?: NumberFormatOptions): NumberFormat;
+        (locales?: string | readonly string[], options?: NumberFormatOptions): NumberFormat;
+        supportedLocalesOf(locales: string | readonly string[], options?: NumberFormatOptions): string[];
     };
 
     interface DateTimeFormatOptions {
@@ -4425,9 +4425,9 @@ declare namespace Intl {
         resolvedOptions(): ResolvedDateTimeFormatOptions;
     }
     var DateTimeFormat: {
-        new(locales?: string | string[], options?: DateTimeFormatOptions): DateTimeFormat;
-        (locales?: string | string[], options?: DateTimeFormatOptions): DateTimeFormat;
-        supportedLocalesOf(locales: string | string[], options?: DateTimeFormatOptions): string[];
+        new(locales?: string | readonly string[], options?: DateTimeFormatOptions): DateTimeFormat;
+        (locales?: string | readonly string[], options?: DateTimeFormatOptions): DateTimeFormat;
+        supportedLocalesOf(locales: string | readonly string[], options?: DateTimeFormatOptions): string[];
     };
 }
 
@@ -4438,7 +4438,7 @@ interface String {
      * @param locales A locale string or array of locale strings that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used. This parameter must conform to BCP 47 standards; see the Intl.Collator object for details.
      * @param options An object that contains one or more properties that specify comparison options. see the Intl.Collator object for details.
      */
-    localeCompare(that: string, locales?: string | string[], options?: Intl.CollatorOptions): number;
+    localeCompare(that: string, locales?: string | readonly string[], options?: Intl.CollatorOptions): number;
 }
 
 interface Number {
@@ -4447,7 +4447,7 @@ interface Number {
      * @param locales A locale string or array of locale strings that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
      * @param options An object that contains one or more properties that specify comparison options.
      */
-    toLocaleString(locales?: string | string[], options?: Intl.NumberFormatOptions): string;
+    toLocaleString(locales?: string | readonly string[], options?: Intl.NumberFormatOptions): string;
 }
 
 interface Date {
@@ -4456,18 +4456,18 @@ interface Date {
      * @param locales A locale string or array of locale strings that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
      * @param options An object that contains one or more properties that specify comparison options.
      */
-    toLocaleString(locales?: string | string[], options?: Intl.DateTimeFormatOptions): string;
+    toLocaleString(locales?: string | readonly string[], options?: Intl.DateTimeFormatOptions): string;
     /**
      * Converts a date to a string by using the current or specified locale.
      * @param locales A locale string or array of locale strings that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
      * @param options An object that contains one or more properties that specify comparison options.
      */
-    toLocaleDateString(locales?: string | string[], options?: Intl.DateTimeFormatOptions): string;
+    toLocaleDateString(locales?: string | readonly string[], options?: Intl.DateTimeFormatOptions): string;
 
     /**
      * Converts a time to a string by using the current or specified locale.
      * @param locales A locale string or array of locale strings that contain one or more language or locale tags. If you include more than one locale string, list them in descending order of priority so that the first entry is the preferred locale. If you omit this parameter, the default locale of the JavaScript runtime is used.
      * @param options An object that contains one or more properties that specify comparison options.
      */
-    toLocaleTimeString(locales?: string | string[], options?: Intl.DateTimeFormatOptions): string;
+    toLocaleTimeString(locales?: string | readonly string[], options?: Intl.DateTimeFormatOptions): string;
 }

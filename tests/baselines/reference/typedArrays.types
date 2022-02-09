@@ -495,9 +495,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >0 : 0
 >Int8Array.of(...obj) : Int8Array
->Int8Array.of : (...items: number[]) => Int8Array
+>Int8Array.of : (...items: readonly number[]) => Int8Array
 >Int8Array : Int8ArrayConstructor
->of : (...items: number[]) => Int8Array
+>of : (...items: readonly number[]) => Int8Array
 >...obj : any
 >obj : any
 
@@ -507,9 +507,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >1 : 1
 >Uint8Array.of(...obj) : Uint8Array
->Uint8Array.of : (...items: number[]) => Uint8Array
+>Uint8Array.of : (...items: readonly number[]) => Uint8Array
 >Uint8Array : Uint8ArrayConstructor
->of : (...items: number[]) => Uint8Array
+>of : (...items: readonly number[]) => Uint8Array
 >...obj : any
 >obj : any
 
@@ -519,9 +519,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >2 : 2
 >Int16Array.of(...obj) : Int16Array
->Int16Array.of : (...items: number[]) => Int16Array
+>Int16Array.of : (...items: readonly number[]) => Int16Array
 >Int16Array : Int16ArrayConstructor
->of : (...items: number[]) => Int16Array
+>of : (...items: readonly number[]) => Int16Array
 >...obj : any
 >obj : any
 
@@ -531,9 +531,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >3 : 3
 >Uint16Array.of(...obj) : Uint16Array
->Uint16Array.of : (...items: number[]) => Uint16Array
+>Uint16Array.of : (...items: readonly number[]) => Uint16Array
 >Uint16Array : Uint16ArrayConstructor
->of : (...items: number[]) => Uint16Array
+>of : (...items: readonly number[]) => Uint16Array
 >...obj : any
 >obj : any
 
@@ -543,9 +543,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >4 : 4
 >Int32Array.of(...obj) : Int32Array
->Int32Array.of : (...items: number[]) => Int32Array
+>Int32Array.of : (...items: readonly number[]) => Int32Array
 >Int32Array : Int32ArrayConstructor
->of : (...items: number[]) => Int32Array
+>of : (...items: readonly number[]) => Int32Array
 >...obj : any
 >obj : any
 
@@ -555,9 +555,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >5 : 5
 >Uint32Array.of(...obj) : Uint32Array
->Uint32Array.of : (...items: number[]) => Uint32Array
+>Uint32Array.of : (...items: readonly number[]) => Uint32Array
 >Uint32Array : Uint32ArrayConstructor
->of : (...items: number[]) => Uint32Array
+>of : (...items: readonly number[]) => Uint32Array
 >...obj : any
 >obj : any
 
@@ -567,9 +567,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >6 : 6
 >Float32Array.of(...obj) : Float32Array
->Float32Array.of : (...items: number[]) => Float32Array
+>Float32Array.of : (...items: readonly number[]) => Float32Array
 >Float32Array : Float32ArrayConstructor
->of : (...items: number[]) => Float32Array
+>of : (...items: readonly number[]) => Float32Array
 >...obj : any
 >obj : any
 
@@ -579,9 +579,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >7 : 7
 >Float64Array.of(...obj) : Float64Array
->Float64Array.of : (...items: number[]) => Float64Array
+>Float64Array.of : (...items: readonly number[]) => Float64Array
 >Float64Array : Float64ArrayConstructor
->of : (...items: number[]) => Float64Array
+>of : (...items: readonly number[]) => Float64Array
 >...obj : any
 >obj : any
 
@@ -591,9 +591,9 @@ function CreateTypedArraysOf(obj) {
 >typedArrays : any[]
 >8 : 8
 >Uint8ClampedArray.of(...obj) : Uint8ClampedArray
->Uint8ClampedArray.of : (...items: number[]) => Uint8ClampedArray
+>Uint8ClampedArray.of : (...items: readonly number[]) => Uint8ClampedArray
 >Uint8ClampedArray : Uint8ClampedArrayConstructor
->of : (...items: number[]) => Uint8ClampedArray
+>of : (...items: readonly number[]) => Uint8ClampedArray
 >...obj : any
 >obj : any
 
@@ -614,9 +614,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >0 : 0
 >Int8Array.of(1,2,3,4) : Int8Array
->Int8Array.of : (...items: number[]) => Int8Array
+>Int8Array.of : (...items: readonly number[]) => Int8Array
 >Int8Array : Int8ArrayConstructor
->of : (...items: number[]) => Int8Array
+>of : (...items: readonly number[]) => Int8Array
 >1 : 1
 >2 : 2
 >3 : 3
@@ -628,9 +628,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >1 : 1
 >Uint8Array.of(1,2,3,4) : Uint8Array
->Uint8Array.of : (...items: number[]) => Uint8Array
+>Uint8Array.of : (...items: readonly number[]) => Uint8Array
 >Uint8Array : Uint8ArrayConstructor
->of : (...items: number[]) => Uint8Array
+>of : (...items: readonly number[]) => Uint8Array
 >1 : 1
 >2 : 2
 >3 : 3
@@ -642,9 +642,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >2 : 2
 >Int16Array.of(1,2,3,4) : Int16Array
->Int16Array.of : (...items: number[]) => Int16Array
+>Int16Array.of : (...items: readonly number[]) => Int16Array
 >Int16Array : Int16ArrayConstructor
->of : (...items: number[]) => Int16Array
+>of : (...items: readonly number[]) => Int16Array
 >1 : 1
 >2 : 2
 >3 : 3
@@ -656,9 +656,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >3 : 3
 >Uint16Array.of(1,2,3,4) : Uint16Array
->Uint16Array.of : (...items: number[]) => Uint16Array
+>Uint16Array.of : (...items: readonly number[]) => Uint16Array
 >Uint16Array : Uint16ArrayConstructor
->of : (...items: number[]) => Uint16Array
+>of : (...items: readonly number[]) => Uint16Array
 >1 : 1
 >2 : 2
 >3 : 3
@@ -670,9 +670,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >4 : 4
 >Int32Array.of(1,2,3,4) : Int32Array
->Int32Array.of : (...items: number[]) => Int32Array
+>Int32Array.of : (...items: readonly number[]) => Int32Array
 >Int32Array : Int32ArrayConstructor
->of : (...items: number[]) => Int32Array
+>of : (...items: readonly number[]) => Int32Array
 >1 : 1
 >2 : 2
 >3 : 3
@@ -684,9 +684,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >5 : 5
 >Uint32Array.of(1,2,3,4) : Uint32Array
->Uint32Array.of : (...items: number[]) => Uint32Array
+>Uint32Array.of : (...items: readonly number[]) => Uint32Array
 >Uint32Array : Uint32ArrayConstructor
->of : (...items: number[]) => Uint32Array
+>of : (...items: readonly number[]) => Uint32Array
 >1 : 1
 >2 : 2
 >3 : 3
@@ -698,9 +698,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >6 : 6
 >Float32Array.of(1,2,3,4) : Float32Array
->Float32Array.of : (...items: number[]) => Float32Array
+>Float32Array.of : (...items: readonly number[]) => Float32Array
 >Float32Array : Float32ArrayConstructor
->of : (...items: number[]) => Float32Array
+>of : (...items: readonly number[]) => Float32Array
 >1 : 1
 >2 : 2
 >3 : 3
@@ -712,9 +712,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >7 : 7
 >Float64Array.of(1,2,3,4) : Float64Array
->Float64Array.of : (...items: number[]) => Float64Array
+>Float64Array.of : (...items: readonly number[]) => Float64Array
 >Float64Array : Float64ArrayConstructor
->of : (...items: number[]) => Float64Array
+>of : (...items: readonly number[]) => Float64Array
 >1 : 1
 >2 : 2
 >3 : 3
@@ -726,9 +726,9 @@ function CreateTypedArraysOf2() {
 >typedArrays : any[]
 >8 : 8
 >Uint8ClampedArray.of(1,2,3,4) : Uint8ClampedArray
->Uint8ClampedArray.of : (...items: number[]) => Uint8ClampedArray
+>Uint8ClampedArray.of : (...items: readonly number[]) => Uint8ClampedArray
 >Uint8ClampedArray : Uint8ClampedArrayConstructor
->of : (...items: number[]) => Uint8ClampedArray
+>of : (...items: readonly number[]) => Uint8ClampedArray
 >1 : 1
 >2 : 2
 >3 : 3

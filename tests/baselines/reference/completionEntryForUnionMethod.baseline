@@ -101,6 +101,14 @@
               "kind": "space"
             },
             {
+              "text": "readonly",
+              "kind": "keyword"
+            },
+            {
+              "text": " ",
+              "kind": "space"
+            },
+            {
               "text": "ConcatArray",
               "kind": "interfaceName"
             },
@@ -175,6 +183,14 @@
             {
               "text": ":",
               "kind": "punctuation"
+            },
+            {
+              "text": " ",
+              "kind": "space"
+            },
+            {
+              "text": "readonly",
+              "kind": "keyword"
             },
             {
               "text": " ",
@@ -309,6 +325,14 @@
               "kind": "space"
             },
             {
+              "text": "readonly",
+              "kind": "keyword"
+            },
+            {
+              "text": " ",
+              "kind": "space"
+            },
+            {
               "text": "ConcatArray",
               "kind": "interfaceName"
             },
@@ -383,6 +407,14 @@
             {
               "text": ":",
               "kind": "punctuation"
+            },
+            {
+              "text": " ",
+              "kind": "space"
+            },
+            {
+              "text": "readonly",
+              "kind": "keyword"
             },
             {
               "text": " ",

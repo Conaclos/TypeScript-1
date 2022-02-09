@@ -1,6 +1,6 @@
 interface ProxyHandler<T extends object> {
-    apply?(target: T, thisArg: any, argArray: any[]): any;
-    construct?(target: T, argArray: any[], newTarget: Function): object;
+    apply?(target: T, thisArg: any, argArray: readonly any[]): any;
+    construct?(target: T, argArray: readonly any[], newTarget: Function): object;
     defineProperty?(target: T, p: string | symbol, attributes: PropertyDescriptor): boolean;
     deleteProperty?(target: T, p: string | symbol): boolean;
     get?(target: T, p: string | symbol, receiver: any): any;

@@ -78,9 +78,9 @@ arr.collect = function (fn) {
 
             res.push(tmp[j]);
 >res.push(tmp[j]) : number
->res.push : (...items: any[]) => number
+>res.push : (...items: readonly any[]) => number
 >res : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >tmp[j] : any
 >tmp : any
 >j : number

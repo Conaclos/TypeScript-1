@@ -384,9 +384,9 @@ function f(dim, offsets, arr, acommon, centerAnchorLimit, g, has, lin) {
 >sinr : number
 >labelGap : any
 >Math.max(taMajorTick.length > 0 ? taMajorTick.length : 0,        taMinorTick.length > 0 ? taMinorTick.length : 0) : number
->Math.max : (...values: number[]) => number
+>Math.max : (...values: readonly number[]) => number
 >Math : Math
->max : (...values: number[]) => number
+>max : (...values: readonly number[]) => number
 >taMajorTick.length > 0 ? taMajorTick.length : 0 : any
 >taMajorTick.length > 0 : boolean
 >taMajorTick.length : any

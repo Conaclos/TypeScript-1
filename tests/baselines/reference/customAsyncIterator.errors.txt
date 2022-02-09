@@ -1,0 +1,25 @@
+tests/cases/compiler/customAsyncIterator.ts(5,11): error TS2416: Property 'next' in type 'ConstantIterator<T>' is not assignable to the same property in base type 'AsyncIterator<T, undefined, T>'.
+  Type '(value?: T) => Promise<IteratorResult<T, any>>' is not assignable to type '(...args: readonly [] | readonly [T]) => Promise<IteratorResult<T, undefined>>'.
+    Types of parameters 'value' and 'args' are incompatible.
+      Type 'readonly [] | readonly [T]' is not assignable to type '[value?: T]'.
+        The type 'readonly []' is 'readonly' and cannot be assigned to the mutable type '[value?: T]'.
+
+
+==== tests/cases/compiler/customAsyncIterator.ts (1 errors) ====
+    // GH: https://github.com/microsoft/TypeScript/issues/33239
+    class ConstantIterator<T> implements AsyncIterator<T, undefined, T | undefined> {
+        constructor(private constant: T) {
+        }
+        async next(value?: T): Promise<IteratorResult<T>> {
+              ~~~~
+!!! error TS2416: Property 'next' in type 'ConstantIterator<T>' is not assignable to the same property in base type 'AsyncIterator<T, undefined, T>'.
+!!! error TS2416:   Type '(value?: T) => Promise<IteratorResult<T, any>>' is not assignable to type '(...args: readonly [] | readonly [T]) => Promise<IteratorResult<T, undefined>>'.
+!!! error TS2416:     Types of parameters 'value' and 'args' are incompatible.
+!!! error TS2416:       Type 'readonly [] | readonly [T]' is not assignable to type '[value?: T]'.
+!!! error TS2416:         The type 'readonly []' is 'readonly' and cannot be assigned to the mutable type '[value?: T]'.
+            if (value != null) {
+                throw new Error("ConstantIterator.prototype.next may not take any values");
+            }
+            return { value: this.constant, done: false };
+        }
+    }

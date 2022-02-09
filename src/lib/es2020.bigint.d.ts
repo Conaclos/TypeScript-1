@@ -380,7 +380,7 @@ interface BigInt64ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: bigint[]): BigInt64Array;
+    of(...items: readonly bigint[]): BigInt64Array;
 
     /**
      * Creates an array from an array-like or iterable object.
@@ -652,7 +652,7 @@ interface BigUint64ArrayConstructor {
      * Returns a new array from a set of elements.
      * @param items A set of elements to include in the new array object.
      */
-    of(...items: bigint[]): BigUint64Array;
+    of(...items: readonly bigint[]): BigUint64Array;
 
     /**
      * Creates an array from an array-like or iterable object.

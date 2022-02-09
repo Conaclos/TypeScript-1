@@ -6,7 +6,7 @@ function foo1(results: number[] | undefined, results1: number[] | undefined) {
 
     (results ||= (results1 ||= [])).push(100);
 >(results ||= (results1 ||= [])).push(100) : number
->(results ||= (results1 ||= [])).push : (...items: number[]) => number
+>(results ||= (results1 ||= [])).push : (...items: readonly number[]) => number
 >(results ||= (results1 ||= [])) : number[]
 >results ||= (results1 ||= []) : number[]
 >results : number[] | undefined
@@ -14,7 +14,7 @@ function foo1(results: number[] | undefined, results1: number[] | undefined) {
 >results1 ||= [] : number[]
 >results1 : number[] | undefined
 >[] : never[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 
@@ -25,7 +25,7 @@ function foo2(results: number[] | undefined, results1: number[] | undefined) {
 
     (results ??= (results1 ??= [])).push(100);
 >(results ??= (results1 ??= [])).push(100) : number
->(results ??= (results1 ??= [])).push : (...items: number[]) => number
+>(results ??= (results1 ??= [])).push : (...items: readonly number[]) => number
 >(results ??= (results1 ??= [])) : number[]
 >results ??= (results1 ??= []) : number[]
 >results : number[] | undefined
@@ -33,7 +33,7 @@ function foo2(results: number[] | undefined, results1: number[] | undefined) {
 >results1 ??= [] : number[]
 >results1 : number[] | undefined
 >[] : never[]
->push : (...items: number[]) => number
+>push : (...items: readonly number[]) => number
 >100 : 100
 }
 
@@ -44,7 +44,7 @@ function foo3(results: number[] | undefined, results1: number[] | undefined) {
 
     (results &&= (results1 &&= [])).push(100);
 >(results &&= (results1 &&= [])).push(100) : number
->(results &&= (results1 &&= [])).push : (...items: never[]) => number
+>(results &&= (results1 &&= [])).push : (...items: readonly never[]) => number
 >(results &&= (results1 &&= [])) : never[] | undefined
 >results &&= (results1 &&= []) : never[] | undefined
 >results : number[] | undefined
@@ -52,7 +52,7 @@ function foo3(results: number[] | undefined, results1: number[] | undefined) {
 >results1 &&= [] : never[] | undefined
 >results1 : number[] | undefined
 >[] : never[]
->push : (...items: never[]) => number
+>push : (...items: readonly never[]) => number
 >100 : 100
 }
 

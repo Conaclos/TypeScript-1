@@ -22,7 +22,7 @@ function g(callback) {
  */
 var stringFromCharCode = String.fromCharCode;
 >stringFromCharCode : (...arg0: number[]) => string
->String.fromCharCode : (...codes: number[]) => string
+>String.fromCharCode : (...codes: readonly number[]) => string
 >String : StringConstructor
->fromCharCode : (...codes: number[]) => string
+>fromCharCode : (...codes: readonly number[]) => string
 

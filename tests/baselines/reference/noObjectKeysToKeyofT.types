@@ -3,7 +3,7 @@
 // The current return type (string[]) is intentional.
 Object.keys({ a: 0 }).push("b");
 >Object.keys({ a: 0 }).push("b") : number
->Object.keys({ a: 0 }).push : (...items: string[]) => number
+>Object.keys({ a: 0 }).push : (...items: readonly string[]) => number
 >Object.keys({ a: 0 }) : string[]
 >Object.keys : { (o: object): string[]; (o: {}): string[]; }
 >Object : ObjectConstructor
@@ -11,7 +11,7 @@ Object.keys({ a: 0 }).push("b");
 >{ a: 0 } : { a: number; }
 >a : number
 >0 : 0
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >"b" : "b"
 
 // See also

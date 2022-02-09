@@ -9520,6 +9520,14 @@
               "kind": "space"
             },
             {
+              "text": "readonly",
+              "kind": "keyword"
+            },
+            {
+              "text": " ",
+              "kind": "space"
+            },
+            {
               "text": "string",
               "kind": "keyword"
             },
@@ -33022,6 +33030,14 @@
             {
               "text": ":",
               "kind": "punctuation"
+            },
+            {
+              "text": " ",
+              "kind": "space"
+            },
+            {
+              "text": "readonly",
+              "kind": "keyword"
             },
             {
               "text": " ",

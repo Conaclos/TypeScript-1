@@ -6,11 +6,11 @@ exports.fn1();
 >fn1 : any
 
 exports.fn2 = Math.min;
->exports.fn2 = Math.min : (...values: number[]) => number
->exports.fn2 : (...values: number[]) => number
+>exports.fn2 = Math.min : (...values: readonly number[]) => number
+>exports.fn2 : (...values: readonly number[]) => number
 >exports : typeof import("tests/cases/conformance/salsa/x")
->fn2 : (...values: number[]) => number
->Math.min : (...values: number[]) => number
+>fn2 : (...values: readonly number[]) => number
+>Math.min : (...values: readonly number[]) => number
 >Math : Math
->min : (...values: number[]) => number
+>min : (...values: readonly number[]) => number
 

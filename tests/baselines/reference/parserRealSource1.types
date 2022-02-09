@@ -291,11 +291,11 @@ module TypeScript {
 
             this.logContents.push(s);
 >this.logContents.push(s) : number
->this.logContents.push : (...items: any[]) => number
+>this.logContents.push : (...items: readonly any[]) => number
 >this.logContents : any[]
 >this : this
 >logContents : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >s : string
         }
     }

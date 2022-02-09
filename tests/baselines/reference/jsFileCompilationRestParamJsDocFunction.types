@@ -27,17 +27,17 @@ function apply(func, thisArg, ...args) {
         case 0: return func.call(thisArg);
 >0 : 0
 >func.call(thisArg) : any
->func.call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>func.call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >func : Function
->call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >thisArg : any
 
         case 1: return func.call(thisArg, args[0]);
 >1 : 1
 >func.call(thisArg, args[0]) : any
->func.call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>func.call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >func : Function
->call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >thisArg : any
 >args[0] : any
 >args : any[]
@@ -46,9 +46,9 @@ function apply(func, thisArg, ...args) {
         case 2: return func.call(thisArg, args[0], args[1]);
 >2 : 2
 >func.call(thisArg, args[0], args[1]) : any
->func.call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>func.call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >func : Function
->call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >thisArg : any
 >args[0] : any
 >args : any[]
@@ -60,9 +60,9 @@ function apply(func, thisArg, ...args) {
         case 3: return func.call(thisArg, args[0], args[1], args[2]);
 >3 : 3
 >func.call(thisArg, args[0], args[1], args[2]) : any
->func.call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>func.call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >func : Function
->call : (this: Function, thisArg: any, ...argArray: any[]) => any
+>call : (this: Function, thisArg: any, ...argArray: readonly any[]) => any
 >thisArg : any
 >args[0] : any
 >args : any[]

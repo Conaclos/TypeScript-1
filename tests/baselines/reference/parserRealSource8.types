@@ -289,11 +289,11 @@ module TypeScript {
 
         context.modDeclChain.push(moduleDecl);
 >context.modDeclChain.push(moduleDecl) : number
->context.modDeclChain.push : (...items: ModuleDeclaration[]) => number
+>context.modDeclChain.push : (...items: readonly ModuleDeclaration[]) => number
 >context.modDeclChain : ModuleDeclaration[]
 >context : AssignScopeContext
 >modDeclChain : ModuleDeclaration[]
->push : (...items: ModuleDeclaration[]) => number
+>push : (...items: readonly ModuleDeclaration[]) => number
 >moduleDecl : ModuleDeclaration
 
         context.typeFlow.checker.currentModDecl = moduleDecl;

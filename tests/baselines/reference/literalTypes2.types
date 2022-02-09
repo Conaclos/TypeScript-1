@@ -746,9 +746,9 @@ function append<T>(a: T[], x: T): T[] {
 
     result.push(x);
 >result.push(x) : number
->result.push : (...items: T[]) => number
+>result.push : (...items: readonly T[]) => number
 >result : T[]
->push : (...items: T[]) => number
+>push : (...items: readonly T[]) => number
 >x : T
 
     return result;

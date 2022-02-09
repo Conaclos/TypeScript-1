@@ -459,9 +459,9 @@ const { value, done } = it.next();
 >value : any
 >done : boolean | undefined
 >it.next() : IteratorResult<number, any>
->it.next : (...args: [] | [undefined]) => IteratorResult<number, any>
+>it.next : (...args: readonly [] | readonly [undefined]) => IteratorResult<number, any>
 >it : Iterator<number, any, undefined>
->next : (...args: [] | [undefined]) => IteratorResult<number, any>
+>next : (...args: readonly [] | readonly [undefined]) => IteratorResult<number, any>
 
 if (!done) {
 >!done : boolean
@@ -640,11 +640,11 @@ const reducer: (...args: ReducerArgs) => void = (op, args) => {
 >console : Console
 >log : (...data: any[]) => void
 >args.firstArr.concat(args.secondArr) : any[]
->args.firstArr.concat : { (...items: ConcatArray<any>[]): any[]; (...items: any[]): any[]; }
+>args.firstArr.concat : { (...items: readonly ConcatArray<any>[]): any[]; (...items: readonly any[]): any[]; }
 >args.firstArr : any[]
 >args : { firstArr: any[]; secondArr: any[]; }
 >firstArr : any[]
->concat : { (...items: ConcatArray<any>[]): any[]; (...items: any[]): any[]; }
+>concat : { (...items: readonly ConcatArray<any>[]): any[]; (...items: readonly any[]): any[]; }
 >args.secondArr : any[]
 >args : { firstArr: any[]; secondArr: any[]; }
 >secondArr : any[]

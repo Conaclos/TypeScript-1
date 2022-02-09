@@ -99,16 +99,16 @@ function del(options: ConfigurableStartEnd = {},
 
     changes.push(options);
 >changes.push(options) : number
->changes.push : (...items: ChangeOptions[]) => number
+>changes.push : (...items: readonly ChangeOptions[]) => number
 >changes : ChangeOptions[]
->push : (...items: ChangeOptions[]) => number
+>push : (...items: readonly ChangeOptions[]) => number
 >options : ConfigurableStartEnd
 
     changes.push(error);
 >changes.push(error) : number
->changes.push : (...items: ChangeOptions[]) => number
+>changes.push : (...items: readonly ChangeOptions[]) => number
 >changes : ChangeOptions[]
->push : (...items: ChangeOptions[]) => number
+>push : (...items: readonly ChangeOptions[]) => number
 >error : { error?: number; }
 }
 

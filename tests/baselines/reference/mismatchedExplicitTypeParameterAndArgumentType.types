@@ -17,9 +17,9 @@ function map<T, U>(xs: T[], f: (x: T) => U) {
 >x => ys.push(f(x)) : (x: T) => number
 >x : T
 >ys.push(f(x)) : number
->ys.push : (...items: U[]) => number
+>ys.push : (...items: readonly U[]) => number
 >ys : U[]
->push : (...items: U[]) => number
+>push : (...items: readonly U[]) => number
 >f(x) : U
 >f : (x: T) => U
 >x : T

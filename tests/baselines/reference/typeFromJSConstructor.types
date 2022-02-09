@@ -138,11 +138,11 @@ Installer.prototype.second = function () {
 
     this.twices.push(1) // error: Object is possibly null
 >this.twices.push(1) : number
->this.twices.push : (...items: any[]) => number
+>this.twices.push : (...items: readonly any[]) => number
 >this.twices : any[] | null
 >this : this
 >twices : any[] | null
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >1 : 1
 
     if (this.twices != null) {
@@ -154,11 +154,11 @@ Installer.prototype.second = function () {
 
         this.twices.push('hi')
 >this.twices.push('hi') : number
->this.twices.push : (...items: any[]) => number
+>this.twices.push : (...items: readonly any[]) => number
 >this.twices : any[]
 >this : this
 >twices : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >'hi' : "hi"
     }
 }

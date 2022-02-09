@@ -8,9 +8,9 @@ function append<a, b extends a>(result: a[], value: b): a[] {
 
     result.push(value);
 >result.push(value) : number
->result.push : (...items: a[]) => number
+>result.push : (...items: readonly a[]) => number
 >result : a[]
->push : (...items: a[]) => number
+>push : (...items: readonly a[]) => number
 >value : b
 
     return result;

@@ -69,5 +69,5 @@ declare class Thing {
 declare class ElementsArray extends Array<any> {
     constructor(arrayLength?: number);
     constructor(arrayLength: number);
-    constructor(...items: any[]);
+    constructor(...items: readonly any[]);
 }

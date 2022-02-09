@@ -13,11 +13,11 @@ class EventBase {
 
         this._listeners.push(listener);
 >this._listeners.push(listener) : number
->this._listeners.push : (...items: any[]) => number
+>this._listeners.push : (...items: readonly any[]) => number
 >this._listeners : any[]
 >this : this
 >_listeners : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >listener : (...args: any[]) => void
     }
 }

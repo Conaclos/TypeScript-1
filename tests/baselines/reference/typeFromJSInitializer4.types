@@ -63,16 +63,16 @@ function f(a = null, b = n, l = []) {
     // l should be any[]
     l.push(1)
 >l.push(1) : number
->l.push : (...items: any[]) => number
+>l.push : (...items: readonly any[]) => number
 >l : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >1 : 1
 
     l.push('ok')
 >l.push('ok') : number
->l.push : (...items: any[]) => number
+>l.push : (...items: readonly any[]) => number
 >l : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >'ok' : "ok"
 }
 

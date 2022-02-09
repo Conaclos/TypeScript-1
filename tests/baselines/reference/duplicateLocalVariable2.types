@@ -98,9 +98,9 @@ export var tests: TestRunner = (function () {
 
                 bytes.push(fb.readByte());
 >bytes.push(fb.readByte()) : number
->bytes.push : (...items: any[]) => number
+>bytes.push : (...items: readonly any[]) => number
 >bytes : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >fb.readByte() : any
 >fb.readByte : any
 >fb : any

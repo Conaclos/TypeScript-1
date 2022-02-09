@@ -48,11 +48,11 @@ class Bar<T extends string> {
 
     Bar.instance.push(this);
 >Bar.instance.push(this) : number
->Bar.instance.push : (...items: Bar<string>[]) => number
+>Bar.instance.push : (...items: readonly Bar<string>[]) => number
 >Bar.instance : Bar<string>[]
 >Bar : typeof Bar
 >instance : Bar<string>[]
->push : (...items: Bar<string>[]) => number
+>push : (...items: readonly Bar<string>[]) => number
 >this : this
   }
 }

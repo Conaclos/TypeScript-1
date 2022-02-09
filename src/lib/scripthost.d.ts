@@ -262,7 +262,7 @@ interface VBArray<T = any> {
     /**
      * Takes an index for each dimension in the array, and returns the item at the corresponding location.
      */
-    getItem(dimension1Index: number, ...dimensionNIndexes: number[]): T;
+    getItem(dimension1Index: number, ...dimensionNIndexes: readonly number[]): T;
 
     /**
      * Returns the smallest available index for a given dimension.

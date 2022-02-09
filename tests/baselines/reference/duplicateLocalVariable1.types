@@ -55,11 +55,11 @@ export class TestRunner {
 
         this.tests.push(test);
 >this.tests.push(test) : number
->this.tests.push : (...items: TestCase[]) => number
+>this.tests.push : (...items: readonly TestCase[]) => number
 >this.tests : TestCase[]
 >this : this
 >tests : TestCase[]
->push : (...items: TestCase[]) => number
+>push : (...items: readonly TestCase[]) => number
 >test : TestCase
     }
     public run() {
@@ -886,9 +886,9 @@ export var tests: TestRunner = (function () {
 
                 chars.push(fb.readByte());
 >chars.push(fb.readByte()) : number
->chars.push : (...items: any[]) => number
+>chars.push : (...items: readonly any[]) => number
 >chars : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >fb.readByte() : any
 >fb.readByte : any
 >fb : any
@@ -953,9 +953,9 @@ export var tests: TestRunner = (function () {
 
                 chars.push(fb.readUtf8CodePoint());
 >chars.push(fb.readUtf8CodePoint()) : number
->chars.push : (...items: any[]) => number
+>chars.push : (...items: readonly any[]) => number
 >chars : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >fb.readUtf8CodePoint() : any
 >fb.readUtf8CodePoint : any
 >fb : any
@@ -1048,9 +1048,9 @@ export var tests: TestRunner = (function () {
 
                 bytes.push(fb.readByte());
 >bytes.push(fb.readByte()) : number
->bytes.push : (...items: any[]) => number
+>bytes.push : (...items: readonly any[]) => number
 >bytes : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >fb.readByte() : any
 >fb.readByte : any
 >fb : any
@@ -1347,9 +1347,9 @@ export var tests: TestRunner = (function () {
 
                 codePoints.push(savedFile.readUtf16CodePoint(false));
 >codePoints.push(savedFile.readUtf16CodePoint(false)) : number
->codePoints.push : (...items: any[]) => number
+>codePoints.push : (...items: readonly any[]) => number
 >codePoints : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >savedFile.readUtf16CodePoint(false) : any
 >savedFile.readUtf16CodePoint : any
 >savedFile : any
@@ -1426,9 +1426,9 @@ export var tests: TestRunner = (function () {
 
                 codePoints.push(savedFile.readUtf8CodePoint());
 >codePoints.push(savedFile.readUtf8CodePoint()) : number
->codePoints.push : (...items: any[]) => number
+>codePoints.push : (...items: readonly any[]) => number
 >codePoints : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >savedFile.readUtf8CodePoint() : any
 >savedFile.readUtf8CodePoint : any
 >savedFile : any

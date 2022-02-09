@@ -27,9 +27,9 @@ s.subby(12);   // error unresolved
 
 String.fromCharCode(12);
 >String.fromCharCode(12) : string
->String.fromCharCode : (...codes: number[]) => string
+>String.fromCharCode : (...codes: readonly number[]) => string
 >String : StringConstructor
->fromCharCode : (...codes: number[]) => string
+>fromCharCode : (...codes: readonly number[]) => string
 >12 : 12
 
 module M {

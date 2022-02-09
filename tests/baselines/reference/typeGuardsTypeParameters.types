@@ -85,9 +85,9 @@ function fun<T>(item: { [P in keyof T]: T[P] }) {
 
             strings.push(value);
 >strings.push(value) : number
->strings.push : (...items: string[]) => number
+>strings.push : (...items: readonly string[]) => number
 >strings : string[]
->push : (...items: string[]) => number
+>push : (...items: readonly string[]) => number
 >value : { [P in keyof T]: T[P]; }[Extract<keyof T, string>] & string
         }
     }

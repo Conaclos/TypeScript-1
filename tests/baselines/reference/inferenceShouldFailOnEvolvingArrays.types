@@ -62,9 +62,9 @@ let zz = [];
 
 zz.push(logLength(42));  // no error; T is inferred as `any`
 >zz.push(logLength(42)) : number
->zz.push : (...items: any[]) => number
+>zz.push : (...items: readonly any[]) => number
 >zz : any[]
->push : (...items: any[]) => number
+>push : (...items: readonly any[]) => number
 >logLength(42) : string
 >logLength : <T extends string, U extends string>(arg: { [K in U]: T; }[U]) => T
 >42 : 42

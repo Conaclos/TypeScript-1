@@ -33,9 +33,9 @@ export function appendToOptionalArray<
 
     array.push(value);
 >array.push(value) : number
->array.push : (...items: Lower<T>[]) => number
+>array.push : (...items: readonly Lower<T>[]) => number
 >array : Lower<T>[]
->push : (...items: Lower<T>[]) => number
+>push : (...items: readonly Lower<T>[]) => number
 >value : T
 
   } else {

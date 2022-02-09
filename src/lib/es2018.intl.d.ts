@@ -31,10 +31,10 @@ declare namespace Intl {
     }
 
     const PluralRules: {
-        new (locales?: string | string[], options?: PluralRulesOptions): PluralRules;
+        new (locales?: string | readonly string[], options?: PluralRulesOptions): PluralRules;
         (locales?: string | string[], options?: PluralRulesOptions): PluralRules;
 
-        supportedLocalesOf(locales: string | string[], options?: { localeMatcher?: "lookup" | "best fit" }): string[];
+        supportedLocalesOf(locales: string | readonly string[], options?: { localeMatcher?: "lookup" | "best fit" }): readonly string[];
     };
 
     // We can only have one definition for 'type' in TypeScript, and so you can learn where the keys come from here:

@@ -760,9 +760,9 @@ module TypeScript {
 >resolved += String.fromCharCode(charCode) : string
 >resolved : string
 >String.fromCharCode(charCode) : string
->String.fromCharCode : (...codes: number[]) => string
+>String.fromCharCode : (...codes: readonly number[]) => string
 >String : StringConstructor
->fromCharCode : (...codes: number[]) => string
+>fromCharCode : (...codes: readonly number[]) => string
 >charCode : number
 
                     i += 6;
@@ -11100,13 +11100,13 @@ module TypeScript {
 >text : string[]
 >i : number
 >this.text[i].replace(/^\s+|\s+$/g, '') : string
->this.text[i].replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>this.text[i].replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >this.text[i] : string
 >this.text : string[]
 >this : this
 >text : string[]
 >i : number
->replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >/^\s+|\s+$/g : RegExp
 >'' : ""
                     }
@@ -11120,11 +11120,11 @@ module TypeScript {
 >[(this.content.replace(/^\s+|\s+$/g, ''))] : string[]
 >(this.content.replace(/^\s+|\s+$/g, '')) : string
 >this.content.replace(/^\s+|\s+$/g, '') : string
->this.content.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>this.content.replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >this.content : string
 >this : this
 >content : string
->replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string): string; }
+>replace : { (searchValue: string | RegExp, replaceValue: string): string; (searchValue: string | RegExp, replacer: (substring: string, ...args: readonly any[]) => string): string; }
 >/^\s+|\s+$/g : RegExp
 >'' : ""
                 }
